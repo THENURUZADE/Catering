@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:Catering1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="Gray">
+        <StackPanel Margin="0,39,0,-39">
+            <Label Content="Xoş gəlmişsiniz" HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="35" Height="60"  Foreground="LimeGreen">
+                <Label.Effect>
+                    <DropShadowEffect BlurRadius="30"/>
+                </Label.Effect>
+            </Label>
+            
+            <TextBlock Text="İstifadəçi adı" TextAlignment="Center" FontSize="35" Width="400" Foreground="LimeGreen">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="30"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </StackPanel>
         
     </Grid>
 </Window>
