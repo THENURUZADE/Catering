@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Catering.Core.Domain.Entities
 {
-    class TestAli
-    {
-        //Eli
+    public class CookCategory : BaseEntity
+    { 
+        public string Name { get; set; }
     }
 }
