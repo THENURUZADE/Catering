@@ -5,7 +5,12 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catering", "Catering1\Catering.csproj", "{F8E551DB-7FC5-46D2-9B93-C186DCE6F11A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catering.Core", "Catering.Core\Catering.Core.csproj", "{393369C5-3BBA-4B30-8DCE-5D6E8F05CFBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catering.Core", "Catering.Core\Catering.Core.csproj", "{393369C5-3BBA-4B30-8DCE-5D6E8F05CFBE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NecessaryItems", "NecessaryItems", "{3FF589A5-AEC9-4F93-A9D1-10702AAD3727}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Backup\Catering.bak = ..\..\..\..\..\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Backup\Catering.bak
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
