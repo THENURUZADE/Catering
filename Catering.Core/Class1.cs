@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Catering.Core.Domain.Entities
+namespace Catering.Core
 {
-    public class CookCategory : BaseEntity
+    public class Class1
     {
-        public string Name { get; set; }
     }
 }

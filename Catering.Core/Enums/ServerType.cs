@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Catering.Core.Domain.Entities
+namespace Catering.Core.Enums
 {
-    public class CookCategory : BaseEntity
+    public enum ServerType
     {
-        public string Name { get; set; }
+        SqlServer,
+        Oracle
     }
 }
