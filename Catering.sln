@@ -3,14 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catering", "Catering1\Catering.csproj", "{F8E551DB-7FC5-46D2-9B93-C186DCE6F11A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catering.Core", "Catering.Core\Catering.Core.csproj", "{393369C5-3BBA-4B30-8DCE-5D6E8F05CFBE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NecessaryItems", "NecessaryItems", "{3FF589A5-AEC9-4F93-A9D1-10702AAD3727}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\..\..\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Backup\Catering.bak = ..\..\..\..\..\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Backup\Catering.bak
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catering.Core", "..\PrivateCatering\PrivateCatering.Core\Catering.Core.csproj", "{4A359E33-9B43-4AC2-B076-D5E2E161114B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cateringg", "..\PrivateCatering\PrivateCatering\Cateringg.csproj", "{253A926A-9F8B-42ED-A1D6-B7303AEFE279}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,14 +18,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F8E551DB-7FC5-46D2-9B93-C186DCE6F11A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8E551DB-7FC5-46D2-9B93-C186DCE6F11A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8E551DB-7FC5-46D2-9B93-C186DCE6F11A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8E551DB-7FC5-46D2-9B93-C186DCE6F11A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{393369C5-3BBA-4B30-8DCE-5D6E8F05CFBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{393369C5-3BBA-4B30-8DCE-5D6E8F05CFBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{393369C5-3BBA-4B30-8DCE-5D6E8F05CFBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{393369C5-3BBA-4B30-8DCE-5D6E8F05CFBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A359E33-9B43-4AC2-B076-D5E2E161114B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A359E33-9B43-4AC2-B076-D5E2E161114B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A359E33-9B43-4AC2-B076-D5E2E161114B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A359E33-9B43-4AC2-B076-D5E2E161114B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{253A926A-9F8B-42ED-A1D6-B7303AEFE279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{253A926A-9F8B-42ED-A1D6-B7303AEFE279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{253A926A-9F8B-42ED-A1D6-B7303AEFE279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{253A926A-9F8B-42ED-A1D6-B7303AEFE279}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
