@@ -65,8 +65,8 @@ namespace Catering.Views
                 await Task.Delay(3000);
                 Dispatcher.Invoke(() =>
                 {
-                    LoginViewModel viewModel = new LoginViewModel();
                     LoginView loginView = new LoginView();
+                    LoginViewModel viewModel = new LoginViewModel(loginView);
                     loginView.DataContext = viewModel;
                     loginView.Show();
                     Close();

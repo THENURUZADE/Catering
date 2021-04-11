@@ -10,9 +10,10 @@ namespace Catering.ViewModel
 {
     public class LoginViewModel : BaseViewModel
     {
-        public LoginViewModel()
+        public LoginViewModel(Window view)
         {
             LoginCommand = new LoginCommand(this);
+            View = view;
         }
         public string Username { get; set; }
         public LoginCommand LoginCommand { get; }
@@ -26,5 +27,7 @@ namespace Catering.ViewModel
                 OnPropertyChanged(nameof(VisibilityIncorrectPassword));
             }
         }
+
+        public Window View { get; set; }
     }
 }
