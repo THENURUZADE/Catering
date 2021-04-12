@@ -35,6 +35,7 @@ namespace Catering.Views
             DoubleAnimation doubleAnimation = new DoubleAnimation();
             Button btn = (Button)sender;
             Grid currentGrid;
+
             switch (btn.Name)
             {
                 case nameof(btnInfo):
@@ -63,6 +64,7 @@ namespace Catering.Views
             {
                 EasingMode = EasingMode.EaseOut
             };
+
             doubleAnimation.EasingFunction = crcEase;
             doubleAnimation.Duration = TimeSpan.FromMilliseconds(stackPanel.Children.Count * 150);
             currentGrid.BeginAnimation(HeightProperty, doubleAnimation);
@@ -76,31 +78,31 @@ namespace Catering.Views
                 EasingMode = EasingMode.EaseOut
             };
 
-            DoubleAnimation doubleAnimation2 = new DoubleAnimation();
+            DoubleAnimation grdMainAnimation = new DoubleAnimation();
 
             if (stpMenuBar.Width == 0)
             {
                 doubleAnimation.To = 140;
                 btnResize.Content = "<";
-                doubleAnimation2.From = 1190 + 140;
-                doubleAnimation2.To = 1190;
+                grdMainAnimation.From = 1190 + 140;
+                grdMainAnimation.To = 1190;
             }
             else
             {
                 doubleAnimation.To = 0;
                 btnResize.Content = ">";
-                doubleAnimation2.From = 1190;
-                doubleAnimation2.To = 1190 + 140;
+                grdMainAnimation.From = 1190;
+                grdMainAnimation.To = 1190 + 140;
             }
 
             doubleAnimation.Duration = TimeSpan.FromSeconds(1);
             doubleAnimation.EasingFunction = crcEase;
 
-            doubleAnimation2.Duration = TimeSpan.FromSeconds(1);
-            doubleAnimation2.EasingFunction = crcEase;
+            grdMainAnimation.Duration = TimeSpan.FromSeconds(1);
+            grdMainAnimation.EasingFunction = crcEase;
 
             stpMenuBar.BeginAnimation(WidthProperty, doubleAnimation);
-            grdMain.BeginAnimation(WidthProperty, doubleAnimation2);
+            grdMain.BeginAnimation(WidthProperty, grdMainAnimation);
         }
     }
 }

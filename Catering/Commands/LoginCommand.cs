@@ -21,28 +21,28 @@ namespace Catering.Commands
         }
         public override void Execute(object parameter)
         {
-            //User user = DB.UserRepository.Get(viewModel.Username);
-            //PasswordBox psBox = (PasswordBox)parameter;
-            //if (user != null)
-            //{
-            //    if (MySecurityHelper.ComputeSha256Hash(psBox.Password) == user.Password)
-            //    {
+            User user = DB.UserRepository.Get(viewModel.Username);
+            PasswordBox psBox = (PasswordBox)parameter;
+            if (user != null)
+            {
+                if (MySecurityHelper.ComputeSha256Hash(psBox.Password) == user.Password)
+                {
                     MainViewModel viewModel = new MainViewModel();
                     MainView view = new MainView();
                     view.DataContext = viewModel;
                     view.Show();
-                    
-            //        this.viewModel.View.Close();
-            //    }
-            //    else
-            //    {
-            //        viewModel.VisibilityIncorrectPassword = Visibility.Visible;
-            //    }
-            //}
-            //else
-            //{
-            //    viewModel.VisibilityIncorrectPassword = Visibility.Visible;
-            //}
+
+            this.viewModel.View.Close();
+                }
+                else
+                {
+                    viewModel.VisibilityIncorrectPassword = Visibility.Visible;
+                }
+            }
+            else
+            {
+                viewModel.VisibilityIncorrectPassword = Visibility.Visible;
+            }
         }
     }
 }

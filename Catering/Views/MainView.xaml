@@ -8,8 +8,13 @@
         Title="MainView" WindowState="Maximized" Height="768" Width="1366" 
         Background="Aquamarine" Loaded="MainViewLoaded">
     <Grid>
-        <WrapPanel>
-            <WrapPanel Width="160" Height="740" Background="Aquamarine">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="160"/>
+                <ColumnDefinition Width="1190"/>
+            </Grid.ColumnDefinitions>
+            
+            <WrapPanel Grid.Column="0" Width="160" Height="740" Background="Aquamarine">
                 <StackPanel Width="140" Height="740" Name="stpMenuBar" Background="White">
                     <Button Content="Məlumat" Height="50" FontSize="18" Background="Transparent"
                             BorderThickness="0" FontWeight="Bold" Width="130" Click="btnClick"
@@ -96,10 +101,10 @@
                             BorderThickness="0"/>
                 </Grid>
             </WrapPanel>
-            <Grid Name="grdMain" Width="1190" Height="740">
-                <Image Source="C:\Users\Isi\source\repos\Catering\Catering\Images\LogoCateringImage.png" 
+            <Grid Grid.Column="1" Name="grdMain" Width="1190" Height="740">
+                <Image Source="/Images/LogoCateringImage.png" 
                        Name="imgMain" Width="400"></Image>
             </Grid>
-        </WrapPanel>
+        </Grid>
     </Grid>
 </Window>

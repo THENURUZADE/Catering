@@ -56,8 +56,7 @@ namespace Catering.Views
         }
         private async void CheckServer()
         {
-            //Kernel.DB.CheckServer()
-            if (true)
+            if (Kernel.DB.CheckServer())
             {
                 await Task.Delay(3000);
                 Dispatcher.Invoke(() =>
@@ -68,11 +67,9 @@ namespace Catering.Views
                     loginView.Show();
                     Close();
                 });
-
             }
             else
             {
-                await Task.Delay(3000);
                 Dispatcher.Invoke(() =>
                 {
                     firstPanel.Visibility = Visibility.Hidden;
