@@ -25,8 +25,9 @@ namespace Catering.Views
         {
             InitializeComponent();
             this.viewModel = viewModel;
+
             if (!viewModel.DbSettings.IntegratedSecurity)
-                sqlServer.IsChecked = true;
+                rdbSqlServer.IsChecked = true;
 
             viewModel.DbSettings.Username = string.Empty;
             viewModel.DbSettings.Password = string.Empty;
@@ -48,16 +49,13 @@ namespace Catering.Views
             Close();
         }
 
-        private void rdbWindowsChecked(object sender, RoutedEventArgs e)
+        private void rdbChecked(object sender, RoutedEventArgs e)
         {
-            txtPassword.IsEnabled = false;
-            txtUsername.IsEnabled = false;
-        }
+            RadioButton rdb = (RadioButton)sender;
 
-        private void rdbSqlServerChecked(object sender, RoutedEventArgs e)
-        {
-            txtPassword.IsEnabled = true;
-            txtUsername.IsEnabled = true;
+            bool isEnabled = rdb == rdbSqlServer;
+            txtPassword.IsEnabled = isEnabled;
+            txtUsername.IsEnabled = isEnabled;
         }
     }
 }

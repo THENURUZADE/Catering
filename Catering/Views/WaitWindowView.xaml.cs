@@ -1,6 +1,6 @@
 ﻿using Catering.Core;
-using Catering.Core.Domain.Factories;
 using Catering.Core.Enums;
+using Catering.Core.Factories;
 using Catering.Models;
 using Catering.ViewModel;
 using System;
@@ -52,15 +52,12 @@ namespace Catering.Views
             DbSettings dbSettings = DbSettings.Get();
             Kernel.DB = DbFactory.Create(ServerType.SqlServer, dbSettings.GetConnectionString());
 
-            _ = Task.Run(() => { CheckServer(); });
-
-
-
-
+            Task.Run(() => { CheckServer(); });
         }
         private async void CheckServer()
         {
-            if (Kernel.DB.CheckServer())
+            //Kernel.DB.CheckServer()
+            if (true)
             {
                 await Task.Delay(3000);
                 Dispatcher.Invoke(() =>

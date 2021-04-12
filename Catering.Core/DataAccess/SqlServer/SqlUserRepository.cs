@@ -1,5 +1,6 @@
 ﻿using Catering.Core.Domain.Abstracts;
 using Catering.Core.Domain.Entities;
+using Catering.Core.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -15,10 +16,12 @@ namespace Catering.Core.DataAccess.SqlServer
         {
 
         }
+
         public User Get(string username)
         {
             if (username == null)
-                return null;
+                throw new ArgumentException("Username can not be null");
+
             using (SqlConnection connection = new SqlConnection(context.connectionString))
             {
                 connection.Open();
@@ -38,7 +41,7 @@ namespace Catering.Core.DataAccess.SqlServer
                         user.Note = (string)reader["Note"];
                         user.LastModifiedDate = (DateTime)reader["LastModifiedDate"];
                         user.IsDeleted = false;
-                        user.IsAdmin = (bool)reader["IsAdmin"];
+                        user.Role = (UserRole)reader["Role"];
                         user.Phone = (string)reader["Phone"];
                         user.Email = (string)reader["Email"];
                         if (!reader.IsDBNull(reader.GetOrdinal("CreatorId")))

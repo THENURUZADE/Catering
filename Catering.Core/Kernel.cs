@@ -10,7 +10,7 @@ namespace Catering.Core
 {
     public static class Kernel
     {
-        public static User currentUser;
+        public static User CurrentUser;
         public static IUnitOfWork DB;
     }
 }

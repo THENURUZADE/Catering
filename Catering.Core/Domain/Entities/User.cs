@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Catering.Core.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,6 @@ namespace Catering.Core.Domain.Entities
         public string Password { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public bool IsAdmin { get; set; }
+        public UserRole Role { get; set; }
     }
 }

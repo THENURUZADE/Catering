@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Catering.Core.Domain.Factories
+namespace Catering.Core.Factories
 {
     public static class DbFactory
     {

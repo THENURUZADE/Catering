@@ -47,8 +47,8 @@
                            VerticalAlignment="Center"/>
                 <Viewbox Width="40" Height="40" Grid.Row="2" Grid.Column="0"
                          HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <RadioButton  Margin="5" GroupName="type" IsChecked="{Binding DbSettings.IntegratedSecurity}"
-                             HorizontalAlignment="Right" VerticalAlignment="Center" Checked="rdbWindowsChecked"/>
+                    <RadioButton  Margin="5" Name="rdbWindows" GroupName="type" IsChecked="{Binding DbSettings.IntegratedSecurity}"
+                             HorizontalAlignment="Right" VerticalAlignment="Center" Checked="rdbChecked"/>
                 </Viewbox>
 
                 <TextBlock Grid.Row="2" Grid.Column="1" Text="Sql Server" FontSize="20"
@@ -56,7 +56,7 @@
                            VerticalAlignment="Center"/>
                 <Viewbox Width="40" Height="40" Grid.Row="2" Grid.Column="1"
                          HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <RadioButton  Margin="5" GroupName="type" Name="sqlServer" Checked="rdbSqlServerChecked"
+                    <RadioButton IsChecked="True"  Margin="5" GroupName="type" Name="rdbSqlServer" Checked="rdbChecked"
                              HorizontalAlignment="Right" VerticalAlignment="Center"/>
                 </Viewbox>
 
