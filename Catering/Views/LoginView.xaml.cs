@@ -23,8 +23,6 @@ namespace Catering.Views
         public LoginView()
         {
             InitializeComponent();
-            LoginViewModel viewModel = new LoginViewModel();
-            DataContext = viewModel;
         }
 
         private void ButtonCancelClick(object sender, RoutedEventArgs e)

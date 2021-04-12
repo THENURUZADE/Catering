@@ -30,6 +30,7 @@ namespace Catering.Commands
                     MainViewModel viewModel = new MainViewModel();
                     MainView view = new MainView();
                     view.DataContext = viewModel;
+                    view.Show();
                     
                     this.viewModel.View.Close();
                 }

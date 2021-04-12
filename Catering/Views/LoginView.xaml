@@ -43,7 +43,7 @@
                     <TextBlock Text="Username or Password is incorrent" Visibility="{Binding VisibilityIncorrectPassword}" FontSize="14" Margin="5"
                        Foreground="red" />
                     <Button Margin="10" Height="40" Width="80" Content="Sign in" Background="SlateGray"
-                    Foreground="Black" FontSize="18" Command="{Binding LoginCommand}"/>
+                    Foreground="Black" FontSize="18" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=pbLogin}"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

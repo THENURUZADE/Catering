@@ -5,11 +5,101 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Catering.Views"
         mc:Ignorable="d"
-        Title="MainView" WindowState="Maximized">
+        Title="MainView" WindowState="Maximized" Height="768" Width="1366" 
+        Background="Aquamarine" Loaded="MainViewLoaded">
     <Grid>
         <WrapPanel>
-            <WrapPanel></WrapPanel>
-            <WrapPanel></WrapPanel>
+            <WrapPanel Width="160" Height="740" Background="Aquamarine">
+                <StackPanel Width="140" Height="740" Name="stpMenuBar" Background="White">
+                    <Button Content="Məlumat" Height="50" FontSize="18" Background="Transparent"
+                            BorderThickness="0" FontWeight="Bold" Width="130" Click="btnClick"
+                            Name="btnInfo">
+                    </Button>
+                    <Grid Height="0" x:Name="grdInfo">
+                        <StackPanel>
+                            <Button Content="Sifarişlər" Height="30" FontSize="16" Margin="5"
+                                    Background="Transparent" BorderThickness="0" HorizontalAlignment="Left"
+                                    FontWeight="Bold"></Button>
+                            <Button Content="Sifariş detalları" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0"
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+                            <Button Content="Müştərilər" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0" 
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+                            <Button Content="Yeməklər" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0" 
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+                            <Button Content="Kateqoriyalar" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0" 
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+                            <Button Content="Şeflər" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0" 
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+
+                            <!--if isAdmin == true this button enabled-->
+                            <Button Content="İstifadəçilər" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0" 
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+                        </StackPanel>
+                    </Grid>
+
+                    <Button Content="Hesabatlar" Height="50" FontSize="18" Background="Transparent"
+                            BorderThickness="0" FontWeight="Bold" Width="130" Click="btnClick"
+                            Name="btnScore">
+                    </Button>
+                    <Grid Height="0" x:Name="grdScore">
+                        <StackPanel>
+                            <Button Content="Sifarişlər" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0" 
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+                            <Button Content="Müştərilər" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0" 
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+                        </StackPanel>
+                    </Grid>
+
+                    <Button Content="Əməliyyatlar" Height="50" FontSize="18" Background="Transparent"
+                            BorderThickness="0" FontWeight="Bold" Width="130" Click="btnClick" 
+                            Name="btnOperation">
+                    </Button>
+                    <Grid Height="0" x:Name="grdOperation">
+                        <StackPanel>
+                            <Button Content="Sifarişlər" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0" 
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+                            <Button Content="Sifariş detalları" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0" 
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+                            <Button Content="Müştərilər" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0" 
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+                            <Button Content="Yeməklər" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0" 
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+                            <Button Content="Kateqoriyalar" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0" 
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+                            <Button Content="Şeflər" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0" 
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+
+                            <!--if isAdmin == true this button enabled-->
+                            <Button Content="İstifadəçilər" Height="30" FontSize="16"
+                                    Background="Transparent" BorderThickness="0" 
+                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+                <Grid Background="Transparent">
+                    <Button Width="20" Height="50" Content="&lt;" VerticalAlignment="Center"
+                            Click="btnResizeClick" Name="btnResize" Background="White"
+                            BorderThickness="0"/>
+                </Grid>
+            </WrapPanel>
+            <Grid Name="grdMain" Width="1190" Height="740">
+                <Image Source="C:\Users\Isi\source\repos\Catering\Catering\Images\LogoCateringImage.png" 
+                       Name="imgMain" Width="400"></Image>
+            </Grid>
         </WrapPanel>
     </Grid>
 </Window>
