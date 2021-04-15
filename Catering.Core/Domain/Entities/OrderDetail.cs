@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Catering.Core.Domain.Entities
 {
-    public class OrderDetail : BaseEntity
+    public class OrderDetail : BaseEntityWithNote
     {
         public Order Order { get; set; }
         public Cook Cook { get; set; }

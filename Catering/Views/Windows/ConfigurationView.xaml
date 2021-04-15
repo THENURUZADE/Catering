@@ -1,4 +1,4 @@
-﻿<Window x:Class="Catering.Views.ConfigurationView"
+﻿<Window x:Class="Catering.Views.Windows.ConfigurationView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -56,7 +56,7 @@
                            VerticalAlignment="Center"/>
                 <Viewbox Width="40" Height="40" Grid.Row="2" Grid.Column="1"
                          HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <RadioButton IsChecked="True"  Margin="5" GroupName="type" Name="rdbSqlServer" Checked="rdbChecked"
+                    <RadioButton Margin="5" GroupName="type" Name="rdbSqlServer" Checked="rdbChecked"
                              HorizontalAlignment="Right" VerticalAlignment="Center"/>
                 </Viewbox>
 

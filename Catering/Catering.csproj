@@ -62,16 +62,28 @@
     <Compile Include="ViewModel\ConfigurationViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="Views\ConfigurationView.xaml.cs">
+    <Compile Include="Views\Components\ButtonsControl.xaml.cs">
+      <DependentUpon>ButtonsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\HeaderControl.xaml.cs">
+      <DependentUpon>HeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ConfigurationView.xaml.cs">
       <DependentUpon>ConfigurationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LoginView.xaml.cs">
+    <Compile Include="Views\Windows\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainView.xaml.cs">
+    <Compile Include="Views\Windows\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WaitWindowView.xaml.cs">
+    <Compile Include="Views\Windows\MainViewNewDesign.xaml.cs">
+      <DependentUpon>MainViewNewDesign.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\ChiefControl.xaml.cs">
+      <DependentUpon>ChiefControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\WaitWindowView.xaml.cs">
       <DependentUpon>WaitWindowView.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
@@ -81,19 +93,35 @@
     <Compile Include="Commands\BaseCommand.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Helpers\Helper.cs" />
-    <Page Include="Views\ConfigurationView.xaml">
+    <Page Include="Views\Components\ButtonsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\LoginView.xaml">
+    <Page Include="Views\Components\HeaderControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainView.xaml">
+    <Page Include="Views\Windows\ConfigurationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WaitWindowView.xaml">
+    <Page Include="Views\Windows\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\MainViewNewDesign.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ChiefControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\WaitWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,5 +166,6 @@
   <ItemGroup>
     <Resource Include="Images\LogoCateringImage.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

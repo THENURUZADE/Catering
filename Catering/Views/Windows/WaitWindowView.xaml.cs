@@ -17,7 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Catering.Views
+namespace Catering.Views.Windows
 {
     /// <summary>
     /// Interaction logic for WaitWindowView.xaml
@@ -31,8 +31,6 @@ namespace Catering.Views
 
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
-            firstPanel.Visibility = Visibility.Visible;
-            secondPanel.Visibility = Visibility.Hidden;
 
             //TODO
             //ADD crypt and decrypt algorithms to SecurityHelper

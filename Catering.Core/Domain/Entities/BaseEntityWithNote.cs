@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Catering.Core.Domain.Entities
 {
-    public class Chief : BaseEntityWithNote
+    public abstract class BaseEntityWithNote : BaseEntity
     {
-        public string Name { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
+        public string Note { get; set; }
     }
 }

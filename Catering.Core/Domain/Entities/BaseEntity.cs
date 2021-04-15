@@ -11,7 +11,6 @@ namespace Catering.Core.Domain.Entities
         public int Id { get; set; }
         public DateTime LastModifiedDate { get; set; }
         public User Creator { get; set; }
-        public string Note { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

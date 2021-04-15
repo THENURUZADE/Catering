@@ -48,6 +48,7 @@
     <Compile Include="Domain\Abstracts\IUnitOfWork.cs" />
     <Compile Include="Domain\Abstracts\IUserRepository.cs" />
     <Compile Include="Domain\Entities\BaseEntity.cs" />
+    <Compile Include="Domain\Entities\BaseEntityWithNote.cs" />
     <Compile Include="Domain\Entities\Chief.cs" />
     <Compile Include="Domain\Entities\Cook.cs" />
     <Compile Include="Domain\Entities\CookCategory.cs" />

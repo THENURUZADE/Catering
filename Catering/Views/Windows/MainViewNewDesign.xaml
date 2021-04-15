@@ -1,0 +1,71 @@
+﻿<Window x:Class="Catering.Views.Windows.MainViewNewDesign"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Catering.Views"
+        mc:Ignorable="d"
+        Title="MainWindowNewDesign" Height="450" Width="800" WindowState="Maximized"
+        Loaded="Window_Loaded" SizeChanged="WindowSizeChanged"
+        MinHeight="600" MinWidth="900">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="subButtons" TargetType="Button">
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="Margin" Value="3 0 0 0"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Width" Value="140"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Background="Aquamarine" Name="stpMenu" Width="0" HorizontalAlignment="Left">
+            <Button Content="Məlumatlar" Margin="2" Height="50" Name="btnInfo" BorderThickness="0" 
+                        Click="btnClick" Background="Transparent" FontSize="18" Foreground="DarkSlateBlue"
+                        FontWeight="Bold"></Button>
+            <StackPanel Name="stpInfo" Height="0">
+                <!--Height="30" Margin="3 0 0 0" Content="Sifarişlər"
+                                HorizontalAlignment="Left" Background="Transparent"
+                                BorderThickness="0" FontSize="16" FontWeight="SemiBold"-->
+                <Button Content="Sifarişlər" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Sifariş detalları" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Müştərilər" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Yemək" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Kategoriyalar" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Şeflər" Style="{StaticResource ResourceKey=subButtons}"/>
+            </StackPanel>
+            <Button Content="Hesabatlar" Margin="2" Height="50" Name="btnReport" BorderThickness="0"
+                        Click="btnClick" Background="Transparent" FontSize="18" Foreground="DarkSlateBlue"
+                        FontWeight="Bold"></Button>
+            <StackPanel x:Name="stpReport" Height="0">
+                <Button Content="Sifarişlər" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Müştərilər" Style="{StaticResource ResourceKey=subButtons}"/>
+            </StackPanel>
+            <Button Content="Əməliyyatlar" Margin="2" Height="50" Name="btnOperation" BorderThickness="0"
+                        Click="btnClick" Background="Transparent" FontSize="18" Foreground="DarkSlateBlue"
+                        FontWeight="Bold"></Button>
+            <StackPanel Name="stpOperation" Height="0">
+                <Button Content="Sifarişlər" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Sifariş detalları" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Müştərilər" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Yemək" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Kategoriyalar" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Şeflər" Style="{StaticResource ResourceKey=subButtons}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Grid Grid.Column="1">
+            <Image Source="/Images/LogoCateringImage.png"></Image>
+        </Grid>
+        
+    </Grid>
+</Window>

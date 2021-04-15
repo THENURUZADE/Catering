@@ -14,7 +14,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Catering.Views
+namespace Catering.Views.Windows
 {
     /// <summary>
     /// Interaction logic for MainView.xaml
@@ -73,36 +73,23 @@ namespace Catering.Views
         private void btnResizeClick(object sender, RoutedEventArgs e)
         {
             DoubleAnimation doubleAnimation = new DoubleAnimation();
-            CircleEase crcEase = new CircleEase()
-            {
-                EasingMode = EasingMode.EaseOut
-            };
+            CircleEase crcEase = new CircleEase() { EasingMode = EasingMode.EaseOut };
 
-            DoubleAnimation grdMainAnimation = new DoubleAnimation();
-
-            if (stpMenuBar.Width == 0)
+            if (wrpMenuBar.Width == 0)
             {
                 doubleAnimation.To = 140;
                 btnResize.Content = "<";
-                grdMainAnimation.From = 1190 + 140;
-                grdMainAnimation.To = 1190;
             }
             else
             {
                 doubleAnimation.To = 0;
                 btnResize.Content = ">";
-                grdMainAnimation.From = 1190;
-                grdMainAnimation.To = 1190 + 140;
             }
 
             doubleAnimation.Duration = TimeSpan.FromSeconds(1);
             doubleAnimation.EasingFunction = crcEase;
 
-            grdMainAnimation.Duration = TimeSpan.FromSeconds(1);
-            grdMainAnimation.EasingFunction = crcEase;
-
-            stpMenuBar.BeginAnimation(WidthProperty, doubleAnimation);
-            grdMain.BeginAnimation(WidthProperty, grdMainAnimation);
+            wrpMenuBar.BeginAnimation(WidthProperty, doubleAnimation);
         }
     }
 }

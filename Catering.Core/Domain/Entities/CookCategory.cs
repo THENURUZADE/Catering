@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Catering.Core.Domain.Entities
 {
-    public class CookCategory : BaseEntity
+    public class CookCategory : BaseEntityWithNote
     {
         public string Name { get; set; }
     }

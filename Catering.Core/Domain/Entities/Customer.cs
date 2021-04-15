@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Catering.Core.Domain.Entities
 {
-    public class Customer : BaseEntity
+    public class Customer : BaseEntityWithNote
     {
         public string Name { get; set; }
         public string Phone { get; set; }

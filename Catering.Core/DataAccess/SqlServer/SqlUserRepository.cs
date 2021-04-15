@@ -46,7 +46,7 @@ namespace Catering.Core.DataAccess.SqlServer
                         user.Email = (string)reader["Email"];
                         if (!reader.IsDBNull(reader.GetOrdinal("CreatorId")))
                             user.Creator = new User() { Id = (int)reader["CreatorId"] };
-                        //user.Creator.Id = (int)reader["creatorId"];
+                        user.Salary = (decimal)reader["Salary"];
                         return user;
                     }
                     return null;

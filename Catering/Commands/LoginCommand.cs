@@ -1,7 +1,7 @@
 ﻿using Catering.Core.Domain.Entities;
 using Catering.Core.Security;
 using Catering.ViewModel;
-using Catering.Views;
+using Catering.Views.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +28,7 @@ namespace Catering.Commands
                 if (MySecurityHelper.ComputeSha256Hash(psBox.Password) == user.Password)
                 {
                     MainViewModel viewModel = new MainViewModel();
-                    MainView view = new MainView();
+                    MainViewNewDesign view = new MainViewNewDesign();
                     view.DataContext = viewModel;
                     view.Show();
 
