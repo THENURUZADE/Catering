@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Catering.Views"
+        xmlns:local="clr-namespace:Catering.Views.Windows"
         mc:Ignorable="d"
         Title="MainWindowNewDesign" Height="450" Width="800" WindowState="Maximized"
         Loaded="Window_Loaded" SizeChanged="WindowSizeChanged"
@@ -41,7 +41,8 @@
                 <Button Content="Müştərilər" Style="{StaticResource ResourceKey=subButtons}"/>
                 <Button Content="Yemək" Style="{StaticResource ResourceKey=subButtons}"/>
                 <Button Content="Kategoriyalar" Style="{StaticResource ResourceKey=subButtons}"/>
-                <Button Content="Şeflər" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Şeflər" Style="{StaticResource ResourceKey=subButtons}" 
+                        Command="{Binding ChiefCommand}"/>
             </StackPanel>
             <Button Content="Hesabatlar" Margin="2" Height="50" Name="btnReport" BorderThickness="0"
                         Click="btnClick" Background="Transparent" FontSize="18" Foreground="DarkSlateBlue"
@@ -63,7 +64,7 @@
             </StackPanel>
         </StackPanel>
 
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" Name="grdMain">
             <Image Source="/Images/LogoCateringImage.png"></Image>
         </Grid>
         

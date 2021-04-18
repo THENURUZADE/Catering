@@ -1,4 +1,4 @@
-﻿using Catering.ViewModel;
+﻿using Catering.ViewModel.WindowViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;

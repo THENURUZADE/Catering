@@ -2,7 +2,7 @@
 using Catering.Core.Enums;
 using Catering.Core.Factories;
 using Catering.Models;
-using Catering.ViewModel;
+using Catering.ViewModel.WindowViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,7 +56,7 @@ namespace Catering.Views.Windows
         {
             if (Kernel.DB.CheckServer())
             {
-                await Task.Delay(3000);
+                await Task.Delay(0);
                 Dispatcher.Invoke(() =>
                 {
                     LoginView loginView = new LoginView();

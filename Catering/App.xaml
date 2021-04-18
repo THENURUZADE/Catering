@@ -3,6 +3,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Catering">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Key="btnBase">
+                <Setter Property="Background" Value="DarkBlue"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="Aquamarine"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="Button" x:Key="btnAdd" BasedOn="{StaticResource btnBase}">
+                <Setter Property="Content" Value="Əlavə et"/>
+            </Style>
+            <Style TargetType="Button" x:Key="btnUpdate" BasedOn="{StaticResource btnBase}">
+                <Setter Property="Content" Value="Redaktə et"/>
+            </Style>
+            <Style TargetType="Button" x:Key="btnReject" BasedOn="{StaticResource btnBase}">
+                <Setter Property="Content" Value="Ləğv et"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="Red"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="Button" x:Key="btnDelete" BasedOn="{StaticResource btnBase}">
+                <Setter Property="Content" Value="Sil"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="Red"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style TargetType="TextBlock" x:Key="txbForm">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontWeight" Value="Medium"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+
+            <Style TargetType="TextBox" x:Key="txtForm">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+            </Style>
+
+            <Style TargetType="RichTextBox" x:Key="rtxForm">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

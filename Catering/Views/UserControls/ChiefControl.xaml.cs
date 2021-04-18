@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Catering.Views.UserControl
+namespace Catering.Views.UserControls
 {
     /// <summary>
     /// Interaction logic for ChiefControl.xaml

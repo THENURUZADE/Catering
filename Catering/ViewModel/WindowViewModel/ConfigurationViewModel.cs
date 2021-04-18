@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Catering.ViewModel
+namespace Catering.ViewModel.WindowViewModel
 {
     public class ConfigurationViewModel : BaseViewModel
     {

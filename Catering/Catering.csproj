@@ -58,10 +58,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\MainViewCommands\ChiefCommand.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
-    <Compile Include="ViewModel\ConfigurationViewModel.cs" />
-    <Compile Include="ViewModel\LoginViewModel.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ControlViewModel\BaseControlViewModel.cs" />
+    <Compile Include="ViewModel\ControlViewModel\ChiefControlViewModel.cs" />
+    <Compile Include="ViewModel\WindowViewModel\BaseWindowViewModel.cs" />
+    <Compile Include="ViewModel\WindowViewModel\ConfigurationViewModel.cs" />
+    <Compile Include="ViewModel\WindowViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\WindowViewModel\MainViewModel.cs" />
     <Compile Include="Views\Components\ButtonsControl.xaml.cs">
       <DependentUpon>ButtonsControl.xaml</DependentUpon>
     </Compile>
@@ -166,6 +170,8 @@
   <ItemGroup>
     <Resource Include="Images\LogoCateringImage.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Commands\UserControlCommands\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

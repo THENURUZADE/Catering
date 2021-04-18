@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Catering.ViewModel
+namespace Catering.ViewModel.WindowViewModel
 {
     public class LoginViewModel : BaseViewModel
     {
