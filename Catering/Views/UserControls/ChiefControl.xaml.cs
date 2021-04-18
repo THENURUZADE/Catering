@@ -23,6 +23,7 @@ namespace Catering.Views.UserControls
         public ChiefControl()
         {
             InitializeComponent();
+            
         }
     }
 }

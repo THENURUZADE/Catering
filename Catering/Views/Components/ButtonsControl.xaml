@@ -13,9 +13,9 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Margin="2" Style="{StaticResource btnAdd}"/>
-        <Button Grid.Row="1" Margin="2" Style="{StaticResource btnUpdate}"/>
-        <Button Grid.Row="2" Margin="2" Style="{StaticResource btnReject}"/>
-        <Button Grid.Row="3" Margin="2" Style="{StaticResource btnDelete}"/>
+        <Button Grid.Row="0" Margin="2" Style="{StaticResource btnAdd}" Command="{Binding AddCommand}"/>
+        <Button Grid.Row="1" Margin="2" Style="{StaticResource btnUpdate}" Command="{Binding UpdateCommand}"/>
+        <Button Grid.Row="2" Margin="2" Style="{StaticResource btnReject}" Command="{Binding RejectCommand}"/>
+        <Button Grid.Row="3" Margin="2" Style="{StaticResource btnDelete}" Command="{Binding DeleteCommand}"/>
     </Grid>
 </UserControl>

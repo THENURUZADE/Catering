@@ -17,24 +17,76 @@
             </Style>
             <Style TargetType="Button" x:Key="btnAdd" BasedOn="{StaticResource btnBase}">
                 <Setter Property="Content" Value="Əlavə et"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
+                        <DataTrigger.Setters>
+                            <Setter Property="Content" Value="Yadda saxla"></Setter>
+                        </DataTrigger.Setters>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
+                        <DataTrigger.Setters>
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger.Setters>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="4">
+                        <DataTrigger.Setters>
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger.Setters>
+                    </DataTrigger>
+                </Style.Triggers>
             </Style>
             <Style TargetType="Button" x:Key="btnUpdate" BasedOn="{StaticResource btnBase}">
                 <Setter Property="Content" Value="Redaktə et"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                        <DataTrigger.Setters>
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger.Setters>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
+                        <DataTrigger.Setters>
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger.Setters>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
+                        <DataTrigger.Setters>
+                            <Setter Property="IsEnabled" Value="True"></Setter>
+                            <Setter Property="Content" Value="Yadda saxla"></Setter>
+                        </DataTrigger.Setters>
+                    </DataTrigger>
+                </Style.Triggers>
             </Style>
+            
             <Style TargetType="Button" x:Key="btnReject" BasedOn="{StaticResource btnBase}">
                 <Setter Property="Content" Value="Ləğv et"/>
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
                         <Setter Property="Background" Value="Red"/>
                     </Trigger>
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                        <DataTrigger.Setters>
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger.Setters>
+                    </DataTrigger>
                 </Style.Triggers>
             </Style>
+            
+            
+            
+            
+            
             <Style TargetType="Button" x:Key="btnDelete" BasedOn="{StaticResource btnBase}">
                 <Setter Property="Content" Value="Sil"/>
+                <Setter Property="IsEnabled" Value="False"></Setter>
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
                         <Setter Property="Background" Value="Red"/>
                     </Trigger>
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="4">
+                        <DataTrigger.Setters>
+                            <Setter Property="IsEnabled" Value="True"></Setter>
+                        </DataTrigger.Setters>
+                    </DataTrigger>
                 </Style.Triggers>
             </Style>
 
@@ -59,6 +111,31 @@
                 <Setter Property="BorderBrush" Value="Black"/>
                 <Setter Property="FontSize" Value="18"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="ListView" x:Key="lstView">
+                <Style.Triggers>
+                    
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
+                        <DataTrigger.Setters>
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger.Setters>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="Grid" x:Key="grdForm">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                        <DataTrigger.Setters>
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger.Setters>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="4">
+                        <DataTrigger.Setters>
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger.Setters>
+                    </DataTrigger>
+                </Style.Triggers>
+                
             </Style>
         </ResourceDictionary>
     </Application.Resources>

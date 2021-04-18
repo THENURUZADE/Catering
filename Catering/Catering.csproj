@@ -58,7 +58,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\ControlCommands\BaseControlCommand.cs" />
+    <Compile Include="Commands\ControlCommands\ChiefControlCommands\AddCommand.cs" />
+    <Compile Include="Commands\ControlCommands\ChiefControlCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\ControlCommands\ChiefControlCommands\RejectCommand.cs" />
+    <Compile Include="Commands\ControlCommands\ChiefControlCommands\UpdateCommand.cs" />
     <Compile Include="Commands\MainViewCommands\ChiefCommand.cs" />
+    <Compile Include="Enums\CurrentSituation.cs" />
+    <Compile Include="Models\ChiefControlModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ControlViewModel\BaseControlViewModel.cs" />
     <Compile Include="ViewModel\ControlViewModel\ChiefControlViewModel.cs" />
@@ -170,8 +177,6 @@
   <ItemGroup>
     <Resource Include="Images\LogoCateringImage.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Commands\UserControlCommands\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

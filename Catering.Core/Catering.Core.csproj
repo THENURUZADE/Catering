@@ -45,6 +45,7 @@
     <Compile Include="DataAccess\SqlServer\SqlContext.cs" />
     <Compile Include="DataAccess\SqlServer\SqlUnitOfWork.cs" />
     <Compile Include="DataAccess\SqlServer\SqlUserRepository.cs" />
+    <Compile Include="Domain\Abstracts\IChiefRepository.cs" />
     <Compile Include="Domain\Abstracts\IUnitOfWork.cs" />
     <Compile Include="Domain\Abstracts\IUserRepository.cs" />
     <Compile Include="Domain\Entities\BaseEntity.cs" />
