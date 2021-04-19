@@ -71,10 +71,6 @@
                 </Style.Triggers>
             </Style>
             
-            
-            
-            
-            
             <Style TargetType="Button" x:Key="btnDelete" BasedOn="{StaticResource btnBase}">
                 <Setter Property="Content" Value="Sil"/>
                 <Setter Property="IsEnabled" Value="False"></Setter>
