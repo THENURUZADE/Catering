@@ -65,6 +65,9 @@
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\UpdateCommand.cs" />
     <Compile Include="Commands\MainViewCommands\ChiefCommand.cs" />
     <Compile Include="Enums\CurrentSituation.cs" />
+    <Compile Include="Helpers\CollectionNumerator.cs" />
+    <Compile Include="Helpers\ErrorMetods.cs" />
+    <Compile Include="Helpers\UIMessages.cs" />
     <Compile Include="Models\ChiefControlModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ControlViewModel\BaseControlViewModel.cs" />
