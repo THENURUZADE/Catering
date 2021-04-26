@@ -47,7 +47,8 @@
 
                 <TextBlock Text="Qeyd:" Grid.Column="2" Grid.RowSpan="3" 
                            Style="{StaticResource txbForm}" HorizontalAlignment="Center"/>
-                <RichTextBox Grid.Column="3" Grid.RowSpan="3" MaxHeight="120"/>
+                <RichTextBox Grid.Column="3" Grid.RowSpan="3" MaxHeight="120" 
+                             Style="{StaticResource rtxForm}"/>
             </Grid>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="0">

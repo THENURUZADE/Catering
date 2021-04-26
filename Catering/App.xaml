@@ -114,7 +114,6 @@
             </Style>
             <Style TargetType="ListView" x:Key="lstView">
                 <Style.Triggers>
-                    
                     <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
                         <DataTrigger.Setters>
                             <Setter Property="IsEnabled" Value="False"></Setter>

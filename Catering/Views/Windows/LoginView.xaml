@@ -11,7 +11,7 @@
         <Grid>
             <StackPanel Height="30" VerticalAlignment="Top">
                 <Button Click="ButtonCancelClick" Height="30" Width="30" HorizontalAlignment="Right" BorderThickness="0" Background="Black">
-                    <Image Source="C:\Users\Isi\source\repos\PrivateCatering\PrivateCatering\Images\CancelImage.jpg">
+                    <Image Source="/Images/CancelImage.jpg">
                     </Image>
                 </Button>
             </StackPanel>

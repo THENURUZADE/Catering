@@ -20,7 +20,7 @@ namespace Catering.Core.DataAccess.SqlServer
         public User Get(string username)
         {
             if (username == null)
-                throw new ArgumentException("Username can not be null");
+                return null;
 
             using (SqlConnection connection = new SqlConnection(context.connectionString))
             {

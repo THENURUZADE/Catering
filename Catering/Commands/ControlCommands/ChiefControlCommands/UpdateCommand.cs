@@ -15,7 +15,7 @@ namespace Catering.Commands.ControlCommands.ChiefControlCommands
         }
         public override void Execute(object parameter)
         {
-            viewModel.CurrentSituation = Enums.CurrentSituation.Edit;
+            viewModel.CurrentSituation = (int)Enums.CurrentSituation.Edit;
         }
     }
 }

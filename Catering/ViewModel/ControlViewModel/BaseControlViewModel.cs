@@ -1,4 +1,5 @@
-﻿using Catering.Enums;
+﻿using Catering.Commands.ControlCommands.ChiefControlCommands;
+using Catering.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,13 @@ namespace Catering.ViewModel.ControlViewModel
     public abstract class BaseControlViewModel : BaseViewModel
     {
         public abstract string Header { get; }
-        private CurrentSituation currentSituation;
+        public AddCommand AddCommand { get; set; }
+        public DeleteCommand DeleteCommand { get; set; }
+        public RejectCommand RejectCommand { get; set; }
+        public UpdateCommand UpdateCommand { get; set; }
 
-        public CurrentSituation CurrentSituation
+        private int currentSituation = 1;
+        public int CurrentSituation
         {
             get { return currentSituation; }
             set
