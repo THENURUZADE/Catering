@@ -44,10 +44,31 @@ namespace Catering.ViewModel.ControlViewModel
             { 
                 selectedModel = value;
                 OnPropertyChanged(nameof(SelectedModel));
+
+                Model = selectedModel?.Clone();
+
+                if (selectedModel != null)
+                {
+                    CurrentSituation = (int)Enums.CurrentSituation.Selected;
+                }
             }
         }
 
 
+        private List<ChiefControlModel> allChiefs;
+
+        public List<ChiefControlModel> AllChiefs
+        {
+            get 
+            { 
+                return allChiefs; 
+            }
+            set 
+            {
+                allChiefs = value;
+                OnPropertyChanged(nameof(AllChiefs));
+            }
+        }
 
 
         private ObservableCollection<ChiefControlModel> chiefs;

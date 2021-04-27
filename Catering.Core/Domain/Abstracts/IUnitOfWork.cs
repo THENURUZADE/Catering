@@ -9,6 +9,7 @@ namespace Catering.Core.Domain.Abstracts
     public interface IUnitOfWork
     {
         IUserRepository UserRepository { get; }
+        IChiefRepository ChiefRepository { get; }
 
         bool CheckServer();
     }

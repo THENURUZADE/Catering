@@ -16,5 +16,21 @@ namespace Catering.Models
 
         public string Note { get; set; }
 
+
+
+        public ChiefControlModel Clone()
+        {
+            ChiefControlModel chief  = new ChiefControlModel();
+
+            chief.Id = Id;
+            chief.Name = Name;
+            chief.No = No;
+            chief.Phone = Phone;
+            chief.Note = Note;
+            chief.Email = Email;
+
+            return chief;
+
+        }
     }
 }
