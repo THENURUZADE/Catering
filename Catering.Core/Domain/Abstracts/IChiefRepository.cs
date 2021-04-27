@@ -9,7 +9,9 @@ namespace Catering.Core.Domain.Abstracts
 {
     public interface IChiefRepository
     {
-        Chief Get(string name);
+        List<Chief> Get();
+        int Add(Chief chief);
+        bool Update(Chief chief);
 
 
     }

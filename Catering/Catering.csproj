@@ -68,6 +68,9 @@
     <Compile Include="Helpers\CollectionNumerator.cs" />
     <Compile Include="Helpers\ErrorMetods.cs" />
     <Compile Include="Helpers\UIMessages.cs" />
+    <Compile Include="Mappers\BaseMapper.cs" />
+    <Compile Include="Mappers\ChiefMapper.cs" />
+    <Compile Include="Models\BaseControlModel.cs" />
     <Compile Include="Models\ChiefControlModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ControlViewModel\BaseControlViewModel.cs" />

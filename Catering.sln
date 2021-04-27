@@ -12,7 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catering", "Catering\Cateri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catering.Core", "Catering.Core\Catering.Core.csproj", "{6BA3CF81-9A85-4759-97D2-3B1A7C4F6E22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extesions", "Extesions\Extesions.csproj", "{613D9AE3-DD7C-4818-93EE-117A27889577}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions", "Extesions\Extensions.csproj", "{613D9AE3-DD7C-4818-93EE-117A27889577}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

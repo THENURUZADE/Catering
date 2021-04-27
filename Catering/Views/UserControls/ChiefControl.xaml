@@ -41,9 +41,9 @@
                 <TextBlock Text="Telefon:" Grid.Column="0" Grid.Row="1" Style="{StaticResource txbForm}"/>
                 <TextBlock Text="Email:" Grid.Column="0" Grid.Row="2" Style="{StaticResource txbForm}"/>
 
-                <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource txtForm}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource txtForm}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource txtForm}"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Model.Name}" Style="{StaticResource txtForm}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Model.Phone}" Style="{StaticResource txtForm}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Model.Email}" Style="{StaticResource txtForm}"/>
 
                 <TextBlock Text="Qeyd:" Grid.Column="2" Grid.RowSpan="3" 
                            Style="{StaticResource txbForm}" HorizontalAlignment="Center"/>
@@ -54,9 +54,15 @@
         <Grid Grid.Row="1" Grid.Column="0">
             <!--TODO: Form-->
         </Grid>
-        <ListView x:Name="ListView" Grid.Row="1" Style="{StaticResource lstView}" >
+        <ListView x:Name="ListView" Grid.Row="1" ItemsSource="{Binding Chiefs}" SelectedItem="{Binding SelectedModel}" Style="{StaticResource lstView}" >
             <ListView.View>
                 <GridView>
+                    <GridViewColumn Header="No" Width="50"></GridViewColumn>
+                    <GridViewColumn Header="Ad" Width="100"></GridViewColumn>
+                    <GridViewColumn Header="Telefon" Width="150"></GridViewColumn>
+                    <GridViewColumn Header="Email" Width="150"></GridViewColumn>
+                    <GridViewColumn Header="Qeyd" Width="350"></GridViewColumn>
+                    
                     
                 </GridView>
             </ListView.View>

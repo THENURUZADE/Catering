@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Catering.Models
 {
-    public class ChiefControlModel
+    public class ChiefControlModel: BaseControlModel
     {
-
-
-        public int No { get; set; }
-
         public string Name { get; set; }
 
         public string Phone { get; set; }
