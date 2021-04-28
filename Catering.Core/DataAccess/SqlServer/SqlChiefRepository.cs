@@ -14,7 +14,6 @@ namespace Catering.Core.DataAccess.SqlServer
     {
         public SqlChiefRepository(SqlContext context):base(context)
         {
-
         }
 
         public int Add(Chief chief)

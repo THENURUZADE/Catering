@@ -49,7 +49,7 @@ namespace Catering.ViewModel.ControlViewModel
 
                 if (selectedModel != null)
                 {
-                    CurrentSituation = (int)Enums.CurrentSituation.Selected;
+                    CurrentSituation = (int)Enums.Situation.Selected;
                 }
             }
         }

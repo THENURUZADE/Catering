@@ -1,12 +1,11 @@
-﻿<UserControl x:Class="Catering.Views.UserControls.ChiefControl"
+﻿<UserControl x:Class="Catering.Views.UserControls.CustomerControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Catering.Views.UserControls" xmlns:components="clr-namespace:Catering.Views.Components"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -29,6 +28,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -40,20 +40,20 @@
                 <TextBlock Text="Ad:" Grid.Column="0" Grid.Row="0" Style="{StaticResource txbForm}"/>
                 <TextBlock Text="Telefon:" Grid.Column="0" Grid.Row="1" Style="{StaticResource txbForm}"/>
                 <TextBlock Text="Email:" Grid.Column="0" Grid.Row="2" Style="{StaticResource txbForm}"/>
-
+                <TextBlock Text="Ünvan:" Grid.Column="0" Grid.Row="3" Style="{StaticResource txbForm}"/>
+                
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Model.Name}" Style="{StaticResource txtForm}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Model.Phone}" Style="{StaticResource txtForm}"/>
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Model.Email}" Style="{StaticResource txtForm}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Model.Address}" Style="{StaticResource txtForm}"/>
 
-                <TextBlock Text="Qeyd:" Grid.Column="2" Grid.RowSpan="3" 
+                <TextBlock Text="Qeyd:" Grid.Column="2" Grid.RowSpan="4" 
                            Style="{StaticResource txbForm}" HorizontalAlignment="Center"/>
-                <RichTextBox Grid.Column="3" Grid.RowSpan="3" MaxHeight="120" 
+                <RichTextBox Grid.Column="3" Grid.RowSpan="4" MaxHeight="120" 
                              Style="{StaticResource rtxForm}"/>
             </Grid>
         </Grid>
-        <Grid Grid.Row="1" Grid.Column="0">
-            <!--TODO: Form-->
-        </Grid>
+       
         <ListView x:Name="ListView" Grid.Row="1" ItemsSource="{Binding Chiefs}" SelectedItem="{Binding SelectedModel}" Style="{StaticResource lstView}" >
             <ListView.View>
                 <GridView>
@@ -62,8 +62,8 @@
                     <GridViewColumn Header="Telefon" Width="150"></GridViewColumn>
                     <GridViewColumn Header="Email" Width="150"></GridViewColumn>
                     <GridViewColumn Header="Qeyd" Width="350"></GridViewColumn>
-                    
-                    
+
+
                 </GridView>
             </ListView.View>
         </ListView>

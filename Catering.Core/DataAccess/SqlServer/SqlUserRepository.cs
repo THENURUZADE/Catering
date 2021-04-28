@@ -14,7 +14,6 @@ namespace Catering.Core.DataAccess.SqlServer
     {
         public SqlUserRepository(SqlContext context) : base(context)
         {
-
         }
 
         public User Get(string username)

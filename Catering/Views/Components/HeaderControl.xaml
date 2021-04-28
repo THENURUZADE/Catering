@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Catering.Views.Components"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Height="30" Background="Aquamarine">
+    <Grid Height="30" Background="DarkBlue">
         <TextBlock Text="{Binding Header}" FontSize="20" 
                    HorizontalAlignment="Center" FontWeight="Bold"/>
     </Grid>
