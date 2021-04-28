@@ -42,14 +42,14 @@
                 <TextBlock Text="Email:" Grid.Column="0" Grid.Row="2" Style="{StaticResource txbForm}"/>
                 <TextBlock Text="Ünvan:" Grid.Column="0" Grid.Row="3" Style="{StaticResource txbForm}"/>
                 
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Model.Name}" Style="{StaticResource txtForm}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Model.Phone}" Style="{StaticResource txtForm}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Model.Email}" Style="{StaticResource txtForm}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Model.Address}" Style="{StaticResource txtForm}"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding CurrentModel.Name}" Style="{StaticResource txtForm}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding CurrentModel.Phone}" Style="{StaticResource txtForm}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CurrentModel.Email}" Style="{StaticResource txtForm}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CurrentModel.Address}" Style="{StaticResource txtForm}"/>
 
                 <TextBlock Text="Qeyd:" Grid.Column="2" Grid.RowSpan="4" 
                            Style="{StaticResource txbForm}" HorizontalAlignment="Center"/>
-                <RichTextBox Grid.Column="3" Grid.RowSpan="4" MaxHeight="120" 
+                <RichTextBox Grid.Column="3" Grid.RowSpan="4" MaxHeight="120" local:RichTextBoxHelper.DocumentXaml="{Binding CurrentModel.Note}"
                              Style="{StaticResource rtxForm}"/>
             </Grid>
         </Grid>
@@ -61,9 +61,8 @@
                     <GridViewColumn Header="Ad" Width="100"></GridViewColumn>
                     <GridViewColumn Header="Telefon" Width="150"></GridViewColumn>
                     <GridViewColumn Header="Email" Width="150"></GridViewColumn>
+                    <GridViewColumn Header="Ünvan" Width="150"></GridViewColumn>
                     <GridViewColumn Header="Qeyd" Width="350"></GridViewColumn>
-
-
                 </GridView>
             </ListView.View>
         </ListView>

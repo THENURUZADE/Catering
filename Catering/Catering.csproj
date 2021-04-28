@@ -75,6 +75,7 @@
     <Compile Include="Helpers\UIMessages.cs" />
     <Compile Include="Mappers\BaseMapper.cs" />
     <Compile Include="Mappers\ChiefMapper.cs" />
+    <Compile Include="Mappers\CustomerMapper.cs" />
     <Compile Include="Models\BaseControlModel.cs" />
     <Compile Include="Models\ChiefControlModel.cs" />
     <Compile Include="Models\CustomerControlModel.cs" />
