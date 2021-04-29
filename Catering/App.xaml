@@ -100,15 +100,15 @@
             <Style TargetType="TextBox" x:Key="txtForm">
                 <Setter Property="Margin" Value="5"/>
                 <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderBrush" Value="DarkBlue"/>
                 <Setter Property="FontSize" Value="18"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
             </Style>
 
-            <Style TargetType="TextBox" x:Key="txForm">
+            <Style TargetType="RichTextBox" x:Key="rtxForm">
                 <Setter Property="Margin" Value="5"/>
                 <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderBrush" Value="DarkBlue"/>
                 <Setter Property="FontSize" Value="18"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
             </Style>
@@ -138,6 +138,22 @@
                     </DataTrigger>
                 </Style.Triggers>
                 
+            </Style>
+           
+            <Style TargetType="Grid" x:Key="grdForm1">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                        <DataTrigger.Setters>
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger.Setters>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="4">
+                        <DataTrigger.Setters>
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger.Setters>
+                    </DataTrigger>
+                </Style.Triggers>
+
             </Style>
         </ResourceDictionary>
     </Application.Resources>
