@@ -59,10 +59,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\ControlCommands\BaseControlCommand.cs" />
-    <Compile Include="Commands\ControlCommands\ChiefControlCommands\AddCommand.cs" />
+    <Compile Include="Commands\ControlCommands\ChiefControlCommands\SaveCommand.cs" />
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\DeleteCommand.cs" />
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\RejectCommand.cs" />
-    <Compile Include="Commands\ControlCommands\ChiefControlCommands\UpdateCommand.cs" />
     <Compile Include="Commands\MainViewCommands\ChiefCommand.cs" />
     <Compile Include="Enums\CurrentSituation.cs" />
     <Compile Include="Helpers\CollectionNumerator.cs" />

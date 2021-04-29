@@ -20,5 +20,15 @@ namespace Catering.Helpers
                 propertyInfo.SetValue(collection[i], i + 1);
             }
         }
+        public static void Numerate(List<T> collection, int startIndex = 0)
+        {
+            Type type = typeof(T);
+            PropertyInfo propertyInfo = type.GetProperty("No");
+
+            for (int i = startIndex; i < collection.Count; i++)
+            {
+                propertyInfo.SetValue(collection[i], i + 1);
+            }
+        }
     }
 }

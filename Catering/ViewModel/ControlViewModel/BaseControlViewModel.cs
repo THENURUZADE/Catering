@@ -11,10 +11,9 @@ namespace Catering.ViewModel.ControlViewModel
     public abstract class BaseControlViewModel : BaseViewModel
     {
         public abstract string Header { get; }
-        public AddCommand AddCommand { get; set; }
+        public SaveCommand SaveCommand { get; set; }
         public DeleteCommand DeleteCommand { get; set; }
         public RejectCommand RejectCommand { get; set; }
-        public UpdateCommand UpdateCommand { get; set; }
 
         private int currentSituation = 1;
         public int CurrentSituation

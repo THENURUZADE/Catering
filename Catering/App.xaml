@@ -105,7 +105,7 @@
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
             </Style>
 
-            <Style TargetType="RichTextBox" x:Key="rtxForm">
+            <Style TargetType="TextBox" x:Key="txForm">
                 <Setter Property="Margin" Value="5"/>
                 <Setter Property="BorderThickness" Value="1"/>
                 <Setter Property="BorderBrush" Value="Black"/>
@@ -117,9 +117,12 @@
                     <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
                         <DataTrigger.Setters>
                             <Setter Property="IsEnabled" Value="False"></Setter>
+                            
                         </DataTrigger.Setters>
                     </DataTrigger>
                 </Style.Triggers>
+                <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Visible" ></Setter>
+                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible" ></Setter>
             </Style>
             <Style TargetType="Grid" x:Key="grdForm">
                 <Style.Triggers>

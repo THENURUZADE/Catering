@@ -1,4 +1,5 @@
-﻿using Catering.Mappers;
+﻿using Catering.Helpers;
+using Catering.Mappers;
 using Catering.Models;
 using Catering.ViewModel.ControlViewModel;
 using Catering.ViewModel.WindowViewModel;
@@ -29,14 +30,19 @@ namespace Catering.Commands.MainViewCommands
             chiefModelList = chiefEntityList.Select(x => mapper.Map(x)).ToList();
 
             MainViewNewDesign view = (MainViewNewDesign)viewModel.view;
-            view.grdMain.Children.Clear();
-            ChiefControlViewModel chiefControlViewModel = new ChiefControlViewModel();
-
-            chiefControlViewModel.AllChiefs = chiefModelList;
-            chiefControlViewModel.Chiefs = new System.Collections.ObjectModel.ObservableCollection<ChiefControlModel>(chiefModelList);
-
             ChiefControl chiefControl = new ChiefControl();
+            
+            ChiefControlViewModel chiefControlViewModel = new ChiefControlViewModel();
             chiefControl.DataContext = chiefControlViewModel;
+            chiefControlViewModel.Chiefs = new System.Collections.ObjectModel.ObservableCollection<ChiefControlModel>(chiefModelList);
+            chiefControlViewModel.AllChiefs = chiefModelList;
+            CollectionNumerator<ChiefControlModel>.Numerate(chiefControlViewModel.Chiefs);
+            CollectionNumerator<ChiefControlModel>.Numerate(chiefControlViewModel.AllChiefs);
+            
+
+           //  MainView mainWindow = (MainView)viewModel.Window;
+            
+            view.grdMain.Children.Clear();
             view.grdMain.Children.Add(chiefControl);
         }
     }

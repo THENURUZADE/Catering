@@ -20,5 +20,10 @@ namespace Catering.Helpers
             string message = $"{header} {maxSymbol}-dan çox ola bilməz!";
             MessageBox.Show(message, "Xəta", MessageBoxButton.OK, MessageBoxImage.Error);
         }
+
+        public void OperationIsTerminated()
+        {
+            MessageBox.Show("Əməliyyat tamamlanmadı", "Xəta", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 }

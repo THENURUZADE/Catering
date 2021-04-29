@@ -24,7 +24,7 @@ namespace Catering.Core.DataAccess.SqlServer
                 con.Open();
                 string command = @"insert into Chiefs output inserted.id Values(@name,@phone,@email,@lastmodifieddate,
                                                                                 @creatorid,@note,@isdeleted)";
-                using (SqlCommand com = new SqlCommand(command))
+                using (SqlCommand com = new SqlCommand(command, con))
                 {
                     AddParameters(com, chief);
 
@@ -39,7 +39,7 @@ namespace Catering.Core.DataAccess.SqlServer
             {
                 con.Open();
                 string command = "select * from Chiefs where  isdeleted = 0";
-                using (SqlCommand com = new SqlCommand(command))
+                using (SqlCommand com = new SqlCommand(command,con))
                 {
 
                     List<Chief> chiefs = new List<Chief>();
@@ -60,7 +60,11 @@ namespace Catering.Core.DataAccess.SqlServer
                             Phone = reader.GetString("phone"),
                             Email = reader.GetString("email"),
                             Creator = Creator
-                         };
+                        };
+                        if (!reader.IsDbNull("note"))
+                        {
+                            chief.Note = reader.GetString("note");
+                        }
                         chiefs.Add(chief);
                     }
                     return chiefs;
@@ -73,9 +77,9 @@ namespace Catering.Core.DataAccess.SqlServer
             using (SqlConnection con = new SqlConnection(context.connectionString))
             {
                 con.Open();
-                string command = @"Update Chiefs set name = @name, phone = @phone, email = @email, lastmodifieddate = @lastmodifieddate
+                string command = @"Update Chiefs set name = @name, phone = @phone, email = @email, lastmodifieddate = @lastmodifieddate,
                                                         creatorid = @creatorid, note = @note, isdeleted = @isdeleted where id = @id";
-                using (SqlCommand com = new SqlCommand(command))
+                using (SqlCommand com = new SqlCommand(command, con))
                 {
                     AddParameters(com, chief);
                     com.Parameters.AddWithValue("@id", chief.Id);

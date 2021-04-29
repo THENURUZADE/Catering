@@ -15,10 +15,9 @@ namespace Catering.ViewModel.ControlViewModel
     {
         public ChiefControlViewModel()
         {
-            AddCommand = new AddCommand(this);
+            SaveCommand = new SaveCommand(this);
             DeleteCommand = new DeleteCommand(this);
             RejectCommand = new RejectCommand(this);
-            UpdateCommand = new UpdateCommand(this);
         }
         public override string Header => "Şeflər";
 
