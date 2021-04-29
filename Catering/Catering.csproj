@@ -62,7 +62,6 @@
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\SaveCommand.cs" />
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\DeleteCommand.cs" />
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\RejectCommand.cs" />
-    <Compile Include="Commands\ControlCommands\ChiefControlCommands\UpdateCommand.cs" />
     <Compile Include="Commands\MainViewCommands\ChiefCommand.cs" />
     <Compile Include="Commands\MainViewCommands\CustomerCommand.cs" />
     <Compile Include="Enums\Situation.cs" />

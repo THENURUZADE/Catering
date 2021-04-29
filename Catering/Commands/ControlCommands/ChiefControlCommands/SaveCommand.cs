@@ -19,13 +19,13 @@ namespace Catering.Commands.ControlCommands.ChiefControlCommands
         }
         public override void Execute(object parameter)
         {
-            if (viewModel.CurrentSituation == (int)Enums.CurrentSituation.Normal )
+            if (viewModel.CurrentSituation == (int)Enums.Situation.Normal )
             {
-                viewModel.CurrentSituation = (int)Enums.CurrentSituation.Add;
+                viewModel.CurrentSituation = (int)Enums.Situation.Add;
             }
-            else if (viewModel.CurrentSituation == (int)Enums.CurrentSituation.Selected)
+            else if (viewModel.CurrentSituation == (int)Enums.Situation.Selected)
             {
-                viewModel.CurrentSituation = (int)Enums.CurrentSituation.Edit;
+                viewModel.CurrentSituation = (int)Enums.Situation.Edit;
 
 
 
@@ -35,7 +35,7 @@ namespace Catering.Commands.ControlCommands.ChiefControlCommands
             }
             else
             {
-                if (viewModel.CurrentSituation == (int)Enums.CurrentSituation.Edit)
+                if (viewModel.CurrentSituation == (int)Enums.Situation.Edit)
                 {
                     var vm = (ChiefControlViewModel)viewModel;
                     Mappers.ChiefMapper mapper = new Mappers.ChiefMapper();
@@ -52,9 +52,9 @@ namespace Catering.Commands.ControlCommands.ChiefControlCommands
                     vm.Chiefs[ins] = vm.Model;
                     vm.AllChiefs[ins] = vm.Model;
                     vm.Model = null;
-                    viewModel.CurrentSituation = (int)Enums.CurrentSituation.Normal;
+                    viewModel.CurrentSituation = (int)Enums.Situation.Normal;
                 }
-                else if (viewModel.CurrentSituation == (int)Enums.CurrentSituation.Add)
+                else if (viewModel.CurrentSituation == (int)Enums.Situation.Add)
                 {
                     var vm = (ChiefControlViewModel)viewModel;
                     Mappers.ChiefMapper mapper = new Mappers.ChiefMapper();
@@ -66,7 +66,7 @@ namespace Catering.Commands.ControlCommands.ChiefControlCommands
                     vm.Chiefs.Add(vm.Model);
                     vm.AllChiefs.Add(vm.Model);
                     vm.Model = null;
-                    viewModel.CurrentSituation = (int)Enums.CurrentSituation.Normal;
+                    viewModel.CurrentSituation = (int)Enums.Situation.Normal;
                     CollectionNumerator<ChiefControlModel>.Numerate(vm.Chiefs);
                     CollectionNumerator<ChiefControlModel>.Numerate(vm.AllChiefs);
                 }
