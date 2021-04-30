@@ -29,7 +29,7 @@ namespace Catering.Commands
                 if (MySecurityHelper.ComputeSha256Hash(psBox.Password) == user.Password)
                 {
                     Kernel.CurrentUser = user;
-                    MainViewNewDesign view = new MainViewNewDesign();
+                    MainView view = new MainView();
                     MainViewModel viewModel = new MainViewModel(view);
                     view.DataContext = viewModel;
                     view.Show();

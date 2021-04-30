@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Catering.Commands.ControlCommands.ChiefControlCommands
 {
-    public class SaveCommand : BaseControlCommand
+    public class SaveCommand : BaseControlCommand<ChiefControlViewModel>
     {
         public SaveCommand(ChiefControlViewModel viewModel):base(viewModel)
         {

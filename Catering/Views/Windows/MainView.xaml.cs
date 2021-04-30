@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,7 +16,7 @@ using System.Windows.Shapes;
 namespace Catering.Views.Windows
 {
     /// <summary>
-    /// Interaction logic for MainView.xaml
+    /// Interaction logic for MainWindowNewDesign.xaml
     /// </summary>
     public partial class MainView : Window
     {
@@ -26,70 +25,99 @@ namespace Catering.Views.Windows
             InitializeComponent();
         }
 
-        private void MainViewLoaded(object sender, RoutedEventArgs e)
-        {
-        }
-
         private void btnClick(object sender, RoutedEventArgs e)
         {
-            DoubleAnimation doubleAnimation = new DoubleAnimation();
-            Button btn = (Button)sender;
-            Grid currentGrid;
-
-            switch (btn.Name)
+            Button currentBtn = (Button)sender;
+            StackPanel currentStackPanel;
+            switch (currentBtn.Name)
             {
                 case nameof(btnInfo):
-                    currentGrid = grdInfo;
-                    break;
-                case nameof(btnScore):
-                    currentGrid = grdScore;
-                    break;
+                    {
+                        currentStackPanel = stpInfo;
+                        break;
+                    }
+                case nameof(btnReport):
+                    {
+                        currentStackPanel = stpReport;
+                        break;
+                    }
                 case nameof(btnOperation):
-                    currentGrid = grdOperation;
-                    break;
+                    {
+                        currentStackPanel = stpOperation;
+                        break;
+                    }
                 default:
                     return;
             }
 
-            StackPanel stackPanel = (StackPanel)currentGrid.Children[0];
-            if (currentGrid.Height == 0)
+            DoubleAnimation doubleAnime = new DoubleAnimation();
+            CircleEase crcEase = new CircleEase() { EasingMode = EasingMode.EaseOut };
+            StackPanel stpCurrent = currentStackPanel;
+
+            if (currentStackPanel.Height == 0)
             {
-                doubleAnimation.To = stackPanel.Children.Count * 40;
+                doubleAnime.To = stpCurrent.Children.Count * 30;
             }
             else
             {
-                doubleAnimation.To = 0;
+                doubleAnime.To = 0;
             }
-            CircleEase crcEase = new CircleEase()
-            {
-                EasingMode = EasingMode.EaseOut
-            };
 
-            doubleAnimation.EasingFunction = crcEase;
-            doubleAnimation.Duration = TimeSpan.FromMilliseconds(stackPanel.Children.Count * 150);
-            currentGrid.BeginAnimation(HeightProperty, doubleAnimation);
+            doubleAnime.EasingFunction = crcEase;
+            doubleAnime.Duration = TimeSpan.FromMilliseconds(150 * stpCurrent.Children.Count);
+
+            currentStackPanel.BeginAnimation(HeightProperty, doubleAnime);
         }
 
-        private void btnResizeClick(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            DoubleAnimation doubleAnimation = new DoubleAnimation();
+            //for (int i = 1; i < stpMenu.Children.Count; i += 2)
+            //{
+            //    StackPanel stpChild = (StackPanel)stpMenu.Children[i];
+            //    for (int j = 0; j < stpChild.Children.Count; j++)
+            //    {
+            //        ((Button)stpChild.Children[j]).Width = 140;
+            //        ((Button)stpChild.Children[j]).HorizontalContentAlignment = HorizontalAlignment.Left;
+            //    }
+            //}
+
+
+
+            DoubleAnimation doubleAnime = new DoubleAnimation();
             CircleEase crcEase = new CircleEase() { EasingMode = EasingMode.EaseOut };
 
-            if (wrpMenuBar.Width == 0)
+            if (stpMenu.Width == 0)
             {
-                doubleAnimation.To = 140;
-                btnResize.Content = "<";
+                doubleAnime.To = 140;
+                Grid grdMenu = (Grid)stpMenu.Parent;
+                ColumnDefinition cml = grdMenu.ColumnDefinitions[0];
+                cml.Width = new GridLength(140, GridUnitType.Pixel);
             }
             else
             {
-                doubleAnimation.To = 0;
-                btnResize.Content = ">";
+                doubleAnime.To = 0;
             }
 
-            doubleAnimation.Duration = TimeSpan.FromSeconds(1);
-            doubleAnimation.EasingFunction = crcEase;
+            doubleAnime.EasingFunction = crcEase;
+            doubleAnime.Duration = TimeSpan.FromMilliseconds(1000);
 
-            wrpMenuBar.BeginAnimation(WidthProperty, doubleAnimation);
+            stpMenu.BeginAnimation(WidthProperty, doubleAnime);
+        }
+
+        private void WindowSizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            //if (stpMenu.Width < 150)
+            //    return;
+            //DoubleAnimation doubleAnime = new DoubleAnimation();
+            //CircleEase crcEase = new CircleEase() { EasingMode = EasingMode.EaseOut };
+
+            //    doubleAnime.To = ActualWidth / 7;
+
+
+            //doubleAnime.EasingFunction = crcEase;
+            //doubleAnime.Duration = TimeSpan.FromMilliseconds(1000);
+
+            //stpMenu.BeginAnimation(WidthProperty, doubleAnime);
         }
     }
 }

@@ -1,0 +1,21 @@
+﻿<Window x:Class="Catering.Views.Components.SureDialogBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Catering.Views.Components"
+        mc:Ignorable="d"
+        Title="SureDialogBox" Height="300" Width="700">
+    <Grid Background="DarkTurquoise">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text ="{Binding Message}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontSize="32"/>
+            <WrapPanel>
+                <Button Height="40" Width="80" Margin="5" Content="Bəli" FontSize="26" FontWeight="Bold"
+                        Click="YesClick"/>
+                <Button Height="40" Width="80" Margin="5" Content="Xeyr" FontSize="26" FontWeight="Bold"
+                        Click="NoClick"/>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>

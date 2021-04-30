@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Catering.Commands.ControlCommands
 {
-    public abstract class BaseControlCommand : BaseCommand
+    public abstract class BaseControlCommand<T> : BaseCommand where T: BaseControlViewModel
     {
-        public readonly BaseControlViewModel viewModel;
-        public BaseControlCommand(BaseControlViewModel viewModel)
+        public readonly T viewModel;
+        public BaseControlCommand(T viewModel)
         {
             this.viewModel = viewModel;
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Catering.Commands.ControlCommands.ChiefControlCommands
 {
-    public class DeleteCommand : BaseControlCommand
+    public class DeleteCommand : BaseControlCommand<ChiefControlViewModel>
     {
         public DeleteCommand(ChiefControlViewModel viewModel) : base(viewModel)
         {

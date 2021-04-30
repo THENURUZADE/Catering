@@ -29,7 +29,7 @@ namespace Catering.Commands.MainViewCommands
             ChiefMapper mapper = new ChiefMapper();
             chiefModelList = chiefEntityList.Select(x => mapper.Map(x)).ToList();
 
-            MainViewNewDesign view = (MainViewNewDesign)viewModel.view;
+            MainView view = (MainView)viewModel.view;
             ChiefControl chiefControl = new ChiefControl();
             
             ChiefControlViewModel chiefControlViewModel = new ChiefControlViewModel();

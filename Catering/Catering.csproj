@@ -62,6 +62,10 @@
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\SaveCommand.cs" />
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\DeleteCommand.cs" />
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\RejectCommand.cs" />
+    <Compile Include="Commands\ControlCommands\CustomerControlCommands\BaseCustomerCommand.cs" />
+    <Compile Include="Commands\ControlCommands\CustomerControlCommands\SaveCustomerCommand.cs" />
+    <Compile Include="Commands\ControlCommands\CustomerControlCommands\DeleteCustomerCommand.cs" />
+    <Compile Include="Commands\ControlCommands\CustomerControlCommands\RejectCustomerCommand.cs" />
     <Compile Include="Commands\MainViewCommands\ChiefCommand.cs" />
     <Compile Include="Commands\MainViewCommands\CustomerCommand.cs" />
     <Compile Include="Enums\Situation.cs" />
@@ -80,6 +84,7 @@
     <Compile Include="ViewModel\ControlViewModel\CustomerControlViewModel.cs" />
     <Compile Include="ViewModel\WindowViewModel\BaseWindowViewModel.cs" />
     <Compile Include="ViewModel\WindowViewModel\ConfigurationViewModel.cs" />
+    <Compile Include="ViewModel\WindowViewModel\Helper\SureDialogViewModel.cs" />
     <Compile Include="ViewModel\WindowViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\WindowViewModel\MainViewModel.cs" />
     <Compile Include="Views\Components\ButtonsControl.xaml.cs">
@@ -87,6 +92,9 @@
     </Compile>
     <Compile Include="Views\Components\HeaderControl.xaml.cs">
       <DependentUpon>HeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\SureDialogBox.xaml.cs">
+      <DependentUpon>SureDialogBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControls\CustomerControl.xaml.cs">
       <DependentUpon>CustomerControl.xaml</DependentUpon>
@@ -99,9 +107,6 @@
     </Compile>
     <Compile Include="Views\Windows\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Windows\MainViewNewDesign.xaml.cs">
-      <DependentUpon>MainViewNewDesign.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControls\ChiefControl.xaml.cs">
       <DependentUpon>ChiefControl.xaml</DependentUpon>
@@ -124,6 +129,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Components\SureDialogBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UserControls\CustomerControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,10 +146,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Windows\MainView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Windows\MainViewNewDesign.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

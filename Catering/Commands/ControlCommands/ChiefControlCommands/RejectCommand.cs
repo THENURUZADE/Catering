@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Catering.Commands.ControlCommands.ChiefControlCommands
 {
-    public class RejectCommand : BaseControlCommand
+    public class RejectCommand : BaseControlCommand<ChiefControlViewModel>
     {
         public RejectCommand(ChiefControlViewModel viewModel) : base(viewModel)
         {

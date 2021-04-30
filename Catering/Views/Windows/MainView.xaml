@@ -5,110 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Catering.Views.Windows"
         mc:Ignorable="d"
-        Title="MainView" Height="700" Width="1200" 
-        Background="Aquamarine" Loaded="MainViewLoaded">
+        Title="MainWindowNewDesign" Height="450" Width="800" WindowState="Maximized"
+        Loaded="Window_Loaded" SizeChanged="WindowSizeChanged"
+        MinHeight="600" MinWidth="900">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="subButtons" TargetType="Button">
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="Margin" Value="3 0 0 0"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Width" Value="140"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1.1*"/>
-            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Background="Aquamarine" Name="stpMenu" Width="0" HorizontalAlignment="Left">
+            <Button Content="Məlumatlar" Margin="2" Height="50" Name="btnInfo" BorderThickness="0" 
+                        Click="btnClick" Background="Transparent" FontSize="18" Foreground="DarkSlateBlue"
+                        FontWeight="Bold"></Button>
+            <StackPanel Name="stpInfo" Height="0">
+                <!--Height="30" Margin="3 0 0 0" Content="Sifarişlər"
+                                HorizontalAlignment="Left" Background="Transparent"
+                                BorderThickness="0" FontSize="16" FontWeight="SemiBold"-->
+                <Button Content="Sifarişlər" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Sifariş detalları" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Müştərilər" Style="{StaticResource ResourceKey=subButtons}"
+                        Command="{Binding CustomerCommand}"/>
+                <Button Content="Yemək" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Kategoriyalar" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Şeflər" Style="{StaticResource ResourceKey=subButtons}" 
+                        Command="{Binding ChiefCommand}"/>
+            </StackPanel>
+            <Button Content="Hesabatlar" Margin="2" Height="50" Name="btnReport" BorderThickness="0"
+                        Click="btnClick" Background="Transparent" FontSize="18" Foreground="DarkSlateBlue"
+                        FontWeight="Bold"></Button>
+            <StackPanel x:Name="stpReport" Height="0">
+                <Button Content="Sifarişlər" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Müştərilər" Style="{StaticResource ResourceKey=subButtons}"/>
+            </StackPanel>
+            <Button Content="Əməliyyatlar" Margin="2" Height="50" Name="btnOperation" BorderThickness="0"
+                        Click="btnClick" Background="Transparent" FontSize="18" Foreground="DarkSlateBlue"
+                        FontWeight="Bold"></Button>
+            <StackPanel Name="stpOperation" Height="0">
+                <Button Content="Sifarişlər" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Sifariş detalları" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Müştərilər" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Yemək" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Kategoriyalar" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Şeflər" Style="{StaticResource ResourceKey=subButtons}"/>
+            </StackPanel>
+        </StackPanel>
 
-        <WrapPanel Grid.Column="0" Background="Aquamarine">
-            <WrapPanel Name="wrpMenuBar"  Height="669" Width="140" Background="White">
-                <StackPanel Grid.Column="0" Width="120" Background="White">
-                    <Button Content="Məlumat" Height="50" FontSize="18" Background="Transparent"
-                            BorderThickness="0" FontWeight="Bold" Width="120" Click="btnClick"
-                            Name="btnInfo">
-                    </Button>
-                    <Grid Height="0" x:Name="grdInfo">
-                        <StackPanel>
-                            <Button Content="Sifarişlər" Height="30" FontSize="16" Margin="5"
-                                    Background="Transparent" BorderThickness="0" HorizontalAlignment="Left"
-                                    FontWeight="Bold"></Button>
-                            <Button Content="Sifariş detalları" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0"
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-                            <Button Content="Müştərilər" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0" 
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-                            <Button Content="Yeməklər" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0" 
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-                            <Button Content="Kateqoriyalar" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0" 
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-                            <Button Content="Şeflər" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0" 
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-
-                            <!--if isAdmin == true this button enabled-->
-                            <Button Content="İstifadəçilər" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0" 
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-                        </StackPanel>
-                    </Grid>
-
-                    <Button Content="Hesabatlar" Height="50" FontSize="18" Background="Transparent"
-                            BorderThickness="0" FontWeight="Bold" Width="120" Click="btnClick"
-                            Name="btnScore">
-                    </Button>
-                    <Grid Height="0" x:Name="grdScore">
-                        <StackPanel>
-                            <Button Content="Sifarişlər" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0" 
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-                            <Button Content="Müştərilər" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0" 
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-                        </StackPanel>
-                    </Grid>
-
-                    <Button Content="Əməliyyatlar" Height="50" FontSize="18" Background="Transparent"
-                            BorderThickness="0" FontWeight="Bold" Width="120" Click="btnClick" 
-                            Name="btnOperation">
-                    </Button>
-                    <Grid Height="0" x:Name="grdOperation">
-                        <StackPanel>
-                            <Button Content="Sifarişlər" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0" 
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-                            <Button Content="Sifariş detalları" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0" 
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-                            <Button Content="Müştərilər" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0" 
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-                            <Button Content="Yeməklər" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0" 
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-                            <Button Content="Kateqoriyalar" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0" 
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-                            <Button Content="Şeflər" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0" 
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-
-                            <!--if isAdmin == true this button enabled-->
-                            <Button Content="İstifadəçilər" Height="30" FontSize="16"
-                                    Background="Transparent" BorderThickness="0" 
-                                    FontWeight="Bold" Margin="5" HorizontalAlignment="Left"></Button>
-                        </StackPanel>
-                    </Grid>
-                </StackPanel>
-
-                <ScrollBar Width="20">
-
-                </ScrollBar>
-            </WrapPanel>
-            <Grid Background="Transparent">
-                <Button Width="20" Height="50" Content="&lt;" VerticalAlignment="Center"
-                            Click="btnResizeClick" Name="btnResize" Background="White"
-                            BorderThickness="0"/>
-            </Grid>
-        </WrapPanel>
         <Grid Grid.Column="1" Name="grdMain">
-            <Image Source="/Images/LogoCateringImage.png" 
-                       Name="imgMain" Width="400"></Image>
+            <Image Source="/Images/LogoCateringImage.png"></Image>
         </Grid>
+        
     </Grid>
 </Window>
