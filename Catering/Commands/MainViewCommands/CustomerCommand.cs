@@ -40,6 +40,7 @@ namespace Catering.Commands.MainViewCommands
             }
             
             CollectionNumerator<CustomerControlModel>.Numerate(customerViewModel.Customers);
+            CollectionNumerator<CustomerControlModel>.Numerate(customerViewModel.AllModels);
         }
     }
 }

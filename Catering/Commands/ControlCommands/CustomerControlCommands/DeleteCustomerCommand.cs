@@ -42,7 +42,7 @@ namespace Catering.Commands.ControlCommands.CustomerControlCommands
 
                     CustomerControlModel model = viewModel.AllModels.FirstOrDefault(x => x.Id == viewModel.SelectedModel.Id);
                     viewModel.AllModels.Remove(model);
-                    CollectionNumerator<CustomerControlModel>.Numerate(viewModel.AllModels);
+                    CollectionNumerator<CustomerControlModel>.Numerate(viewModel.AllModels, model.No - 1);
                     viewModel.Customers = new ObservableCollection<CustomerControlModel>(viewModel.AllModels);
 
 
