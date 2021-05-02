@@ -16,6 +16,7 @@
                 </Style.Triggers>
             </Style>
             <Style TargetType="Button" x:Key="btnAdd" BasedOn="{StaticResource btnBase}">
+                <Setter Property="Command" Value="{Binding Save}"/>
                 <Setter Property="Content" Value="Əlavə et"/>
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
@@ -36,6 +37,7 @@
                 </Style.Triggers>
             </Style>
             <Style TargetType="Button" x:Key="btnUpdate" BasedOn="{StaticResource btnBase}">
+                <Setter Property="Command" Value="{Binding Save}"/>
                 <Setter Property="Content" Value="Redaktə et"/>
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
@@ -58,6 +60,7 @@
             </Style>
             
             <Style TargetType="Button" x:Key="btnReject" BasedOn="{StaticResource btnBase}">
+                <Setter Property="Command" Value="{Binding Reject}"/>
                 <Setter Property="Content" Value="Ləğv et"/>
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
@@ -70,12 +73,13 @@
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
-            
-            
-            
-            
-            
+
+
+
+
+
             <Style TargetType="Button" x:Key="btnDelete" BasedOn="{StaticResource btnBase}">
+                <Setter Property="Command" Value="{Binding Delete}"/>
                 <Setter Property="Content" Value="Sil"/>
                 <Setter Property="IsEnabled" Value="False"></Setter>
                 <Style.Triggers>

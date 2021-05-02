@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Catering.Views.Components"
         mc:Ignorable="d"
-        Title="SureDialogBox" Height="300" Width="700">
+        Title="SureDialogBox" Height="200" Width="540" WindowStartupLocation="CenterScreen">
     <Grid Background="DarkTurquoise">
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock Text ="{Binding Message}" HorizontalAlignment="Center" VerticalAlignment="Center"
                        FontSize="32"/>
-            <WrapPanel>
+            <WrapPanel HorizontalAlignment="Center">
                 <Button Height="40" Width="80" Margin="5" Content="Bəli" FontSize="26" FontWeight="Bold"
-                        Click="YesClick"/>
+                        Click="YesClick" Background="Red"/>
                 <Button Height="40" Width="80" Margin="5" Content="Xeyr" FontSize="26" FontWeight="Bold"
-                        Click="NoClick"/>
+                        Click="NoClick" Background="Green"/>
             </WrapPanel>
         </StackPanel>
     </Grid>

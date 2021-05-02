@@ -23,7 +23,7 @@ namespace Catering.Core.DataAccess.SqlServer
                 connection.Open();
                 
                 string cmdText = @"Insert into Customers output inserted.Id  
-                                  values (@Name,@Phone,@Address,
+                                  values (@Name,@Phone, @Email, @Address,
                                   @LastModifiedDate,@CreatorId,@Note,@IsDeleted)";
 
                 using (SqlCommand cmd = new SqlCommand(cmdText,connection))
@@ -80,16 +80,18 @@ namespace Catering.Core.DataAccess.SqlServer
         {
             cmd.Parameters.AddWithValue("@Name", customer.Name);
             cmd.Parameters.AddWithValue("@Phone", customer.Phone);
+            cmd.Parameters.AddWithValue("@Email", customer.Email ?? (object)DBNull.Value);
             cmd.Parameters.AddWithValue("@Address", customer.Address);
             cmd.Parameters.AddWithValue("@LastModifiedDate", customer.LastModifiedDate);
-            cmd.Parameters.AddWithValue("@CreatorId", customer.Creator);
-            cmd.Parameters.AddWithValue("@Note", customer.Note);
+            cmd.Parameters.AddWithValue("@CreatorId", customer.Creator.Id);
+            cmd.Parameters.AddWithValue("@Note", customer.Note ?? (object)DBNull.Value);
             cmd.Parameters.AddWithValue("@IsDeleted", customer.IsDeleted);
         }
     
         private Customer GetFromReader(SqlDataReader reader)
         {
             Customer customer = new Customer();
+            customer.Id = (int)reader["Id"];
             customer.Name = (string)reader["Name"];
             customer.Phone = (string)reader["Phone"];
             if (reader["Email"] != DBNull.Value)
@@ -97,7 +99,7 @@ namespace Catering.Core.DataAccess.SqlServer
 
             customer.Address = (string)reader["Address"];
             customer.LastModifiedDate = (DateTime)reader["LastModifiedDate"];
-            if (!reader.IsDBNull(reader.GetOrdinal("CustomerId")))
+            if (!reader.IsDBNull(reader.GetOrdinal("CreatorId")))
             {
                 customer.Creator = new User();
                 customer.Creator.Id = (int)reader["CreatorId"];

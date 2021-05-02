@@ -1,9 +1,11 @@
 ﻿using Catering.Core.Domain.Entities;
+using Catering.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Catering.Models
 {
@@ -29,17 +31,33 @@ namespace Catering.Models
 
             return model;
         }
-    
-    
-    
-    
-    
-    
+
+        public bool IsValid()
+        {
+            if(string.IsNullOrWhiteSpace(Name))
+            {
+                ErrorMetods.InValidSpace("Müştəri adı");
+                return false;
+            }
+            else if (Name.Length > 15)
+            {
+                ErrorMetods.InValidLength("Müştəri adı", 15);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(Phone))
+            {
+                ErrorMetods.InValidSpace("Telefon nömrəsi");
+                return false;
+            }
+            else if (!ErrorMetods.PhoneValidationTest(Phone.ToString()))
+            {
+                return false;
+            }
+            if (!string.IsNullOrWhiteSpace(Email) && !ErrorMetods.EmailValidationTest(Email.ToString()))
+            {
+                return false;
+            }
+            return true;
+        }
     }
-    
-
-
-
-
-
 }

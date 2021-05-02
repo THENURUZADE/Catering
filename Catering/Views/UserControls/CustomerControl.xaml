@@ -49,20 +49,20 @@
 
                 <TextBlock Text="Qeyd:" Grid.Column="2" Grid.RowSpan="4" 
                            Style="{StaticResource txbForm}" HorizontalAlignment="Center"/>
-                <RichTextBox Grid.Column="3" Grid.RowSpan="4" MaxHeight="120" local:RichTextBoxHelper.DocumentXaml="{Binding CurrentModel.Note}"
-                             Style="{StaticResource rtxForm}"/>
+                <TextBox Grid.Column="3" Grid.RowSpan="4" MaxHeight="120" Text="{Binding CurrentModel.Note}"
+                            TextWrapping="Wrap" AcceptsReturn="True" Style="{StaticResource txForm}"/>
             </Grid>
         </Grid>
        
-        <ListView x:Name="ListView" Grid.Row="1" ItemsSource="{Binding Chiefs}" SelectedItem="{Binding SelectedModel}" Style="{StaticResource lstView}" >
+        <ListView x:Name="ListView" Grid.Row="1" ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedModel}" Style="{StaticResource lstView}" >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="No" Width="50"></GridViewColumn>
-                    <GridViewColumn Header="Ad" Width="100"></GridViewColumn>
-                    <GridViewColumn Header="Telefon" Width="150"></GridViewColumn>
-                    <GridViewColumn Header="Email" Width="150"></GridViewColumn>
-                    <GridViewColumn Header="Ünvan" Width="150"></GridViewColumn>
-                    <GridViewColumn Header="Qeyd" Width="350"></GridViewColumn>
+                    <GridViewColumn Header="No" Width="50" DisplayMemberBinding="{Binding No}"></GridViewColumn>
+                    <GridViewColumn Header="Ad" Width="100" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
+                    <GridViewColumn Header="Telefon" Width="150" DisplayMemberBinding="{Binding Phone}"></GridViewColumn>
+                    <GridViewColumn Header="Email" Width="150" DisplayMemberBinding="{Binding Email}"></GridViewColumn>
+                    <GridViewColumn Header="Ünvan" Width="150" DisplayMemberBinding="{Binding Address}"></GridViewColumn>
+                    <GridViewColumn Header="Qeyd" Width="350" DisplayMemberBinding="{Binding Note}"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

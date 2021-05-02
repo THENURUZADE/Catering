@@ -1,4 +1,5 @@
-﻿using Catering.Enums;
+﻿using Catering.Commands.ControlCommands.CustomerControlCommands;
+using Catering.Enums;
 using Catering.Models;
 using System;
 using System.Collections.Generic;
@@ -30,8 +31,11 @@ namespace Catering.ViewModel.ControlViewModel
             set
             {
                 selectedModel = value;
-                CurrentModel = selectedModel.Clone();
-                CurrentSituation = (int)Situation.Selected;
+                if (selectedModel != null)
+                {
+                    CurrentModel = selectedModel.Clone();
+                    CurrentSituation = (int)Situation.Selected;
+                }
                 OnPropertyChanged(nameof(SelectedModel));
             }
         }
@@ -53,7 +57,13 @@ namespace Catering.ViewModel.ControlViewModel
             set
             {
                 customers = value;
+                OnPropertyChanged(nameof(Customers));
             }
         }
+
+
+        public SaveCustomerCommand Save => new SaveCustomerCommand(this);
+        public RejectCustomerCommand Reject => new RejectCustomerCommand(this);
+        public DeleteCustomerCommand Delete => new DeleteCustomerCommand(this);
     }
 }
