@@ -15,6 +15,9 @@ namespace Catering.Commands.ControlCommands.ChiefControlCommands
         }
         public override void Execute(object parameter)
         {
+
+            viewModel.Model = null;
+            viewModel.SelectedModel = null;
             viewModel.CurrentSituation = (int)Enums.Situation.Normal;
         }
     }

@@ -15,16 +15,23 @@ namespace Catering.ViewModel.ControlViewModel
     {
         public ChiefControlViewModel()
         {
-            SaveCommand = new SaveCommand(this);
-            DeleteCommand = new DeleteCommand(this);
-            RejectCommand = new RejectCommand(this);
+            Save = new SaveCommand(this);
+            Delete = new DeleteCommand(this);
+            Reject = new RejectCommand(this);
         }
         public override string Header => "Şeflər";
 
         private ChiefControlModel model = new ChiefControlModel();
         public ChiefControlModel Model
         {
-            get { return model; }
+            get 
+            {
+                if (model == null)
+                {
+                    model = new ChiefControlModel();
+                }
+                return model; 
+            }
             set 
             { 
                 model = value;
