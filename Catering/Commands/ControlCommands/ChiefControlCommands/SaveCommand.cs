@@ -26,12 +26,6 @@ namespace Catering.Commands.ControlCommands.ChiefControlCommands
             else if (viewModel.CurrentSituation == (int)Enums.Situation.Selected)
             {
                 viewModel.CurrentSituation = (int)Enums.Situation.Edit;
-
-
-
-                
-
-
             }
             else
             {
@@ -52,6 +46,7 @@ namespace Catering.Commands.ControlCommands.ChiefControlCommands
                     vm.Chiefs[ins] = vm.Model;
                     vm.AllChiefs[ins] = vm.Model;
                     vm.Model = null;
+                    vm.SelectedModel = null;
                     viewModel.CurrentSituation = (int)Enums.Situation.Normal;
                 }
                 else if (viewModel.CurrentSituation == (int)Enums.Situation.Add)
