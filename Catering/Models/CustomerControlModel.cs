@@ -1,4 +1,5 @@
-﻿using Catering.Core.Domain.Entities;
+﻿using Catering.Attributes;
+using Catering.Core.Domain.Entities;
 using Catering.Helpers;
 using System;
 using System.Collections.Generic;
@@ -9,14 +10,19 @@ using System.Windows;
 
 namespace Catering.Models
 {
-    public class CustomerControlModel:BaseControlModel
+    public class CustomerControlModel : BaseControlModel
     {
+        [Export(Name = "Ad")]
         public string Name { get; set; }
+        [Export(Name = "Telefon")]
         public string Phone { get; set; }
+        [Export(Name = "Email")]
         public string Email { get; set; }
+        [Export(Name = "Qeyd")]
         public string Note { get; set; }
+        [Export(Name = "Ünvan")]
         public string Address { get; set; }
-   
+
 
         public CustomerControlModel Clone()
         {

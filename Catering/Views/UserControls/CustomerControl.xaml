@@ -70,11 +70,13 @@
             <WrapPanel HorizontalAlignment="Center">
                 <TextBlock Text="Axtarış" Foreground="White" FontSize="22" 
                            VerticalAlignment="Center" FontWeight="Bold" Margin="2"/>
-                <TextBox Height="30" Foreground="Black" FontSize="20" Width="400" Margin="2"
+                <TextBox Height="40" Foreground="Black" FontSize="20" Width="400" Margin="2"
                          HorizontalAlignment="Center" FontWeight="Bold" 
                          Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
-                <Button Margin="10 2 2 2" Content="Export" FontSize="20"
-                        Background="Green" FontWeight="Bold"/>
+                <Border CornerRadius="10" Background="GreenYellow" Margin="10 2 2 2">
+                <Button Content="Export" FontSize="20" BorderThickness="0"
+                        Background="Transparent" FontWeight="Bold" Command="{Binding ExportExcel}"/>
+                </Border>
             </WrapPanel>
             
         </Grid>
