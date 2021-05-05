@@ -1,4 +1,5 @@
 ﻿using Catering.Commands.ControlCommands.ChiefControlCommands;
+using Catering.Commands.ControlCommands.CustomerControlCommands;
 using Catering.Enums;
 using Catering.Models;
 using System;
@@ -88,7 +89,7 @@ namespace Catering.ViewModel.ControlViewModel
             }
         }
 
-
+        public ExportToExcelCustomerCommand<ChiefControlModel, ChiefControlViewModel> ExportExcel => new ExportToExcelCustomerCommand<ChiefControlModel, ChiefControlViewModel>(this);
 
 
 

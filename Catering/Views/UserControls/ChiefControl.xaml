@@ -68,8 +68,19 @@
             </ListView.View>
         </ListView>
         <Grid Grid.Row="2" Background="DarkBlue">
-            <TextBlock Height="30" Text="SearchPanel" Foreground="White" FontSize="20"
-                       HorizontalAlignment="Center" FontWeight="Bold"/>
+            <WrapPanel HorizontalAlignment="Center">
+                <TextBlock Text="Axtarış" Foreground="White" FontSize="22" 
+                           VerticalAlignment="Center" FontWeight="Bold" Margin="2"/>
+                <TextBox Height="40" Foreground="Black" FontSize="20" Width="400" Margin="2"
+                         HorizontalAlignment="Center" FontWeight="Bold" 
+                         Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                <Border CornerRadius="10" Background="GreenYellow" Margin="10 2 2 2">
+                    <Button Content="Export" FontSize="20" BorderThickness="0"
+                        Background="Transparent" FontWeight="Bold" Command="{Binding ExportExcel}"/>
+                </Border>
+            </WrapPanel>
+
         </Grid>
+
     </Grid>
 </UserControl>

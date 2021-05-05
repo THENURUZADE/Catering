@@ -78,7 +78,7 @@ namespace Catering.ViewModel.ControlViewModel
         public SaveCustomerCommand Save => new SaveCustomerCommand(this);
         public RejectCustomerCommand Reject => new RejectCustomerCommand(this);
         public DeleteCustomerCommand Delete => new DeleteCustomerCommand(this);
-        public ExportToExcelCustomerCommand ExportExcel => new ExportToExcelCustomerCommand(this);
+        public ExportToExcelCustomerCommand<CustomerControlModel, CustomerControlViewModel> ExportExcel => new ExportToExcelCustomerCommand<CustomerControlModel,CustomerControlViewModel>(this);
 
         #endregion
 

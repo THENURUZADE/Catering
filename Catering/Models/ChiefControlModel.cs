@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Catering.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,15 @@ using System.Threading.Tasks;
 
 namespace Catering.Models
 {
-    public class ChiefControlModel: BaseControlModel
+    public class ChiefControlModel : BaseControlModel
     {
+        [Export(Name = "Ad")]
         public string Name { get; set; }
-
+        [Export(Name = "Telefon")]
         public string Phone { get; set; }
-
+        [Export(Name = "Email")]
         public string Email { get; set; }
-
+        [Export(Name = "Qeyd")]
         public string Note { get; set; }
 
 
