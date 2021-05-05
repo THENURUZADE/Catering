@@ -89,13 +89,37 @@ namespace Catering.ViewModel.ControlViewModel
             }
         }
 
+        private string searchText;
+
+        public string SearchText
+        {
+            get { return searchText; }
+            set 
+            { 
+                searchText = value;
+                Search(value);
+                OnPropertyChanged(nameof(SearchText));
+            }
+        }
+
+        private void Search(string searchText)
+        {
+            var temp = allChiefs.Where(x => x.Email.Contains(searchText) || x.Name.Contains(searchText) || x.Phone.Contains(searchText) || x.Note.MyContains(searchText));
+            Chiefs = new ObservableCollection<ChiefControlModel>(temp.ToList());
+
+        }
         public ExportToExcelCustomerCommand<ChiefControlModel, ChiefControlViewModel> ExportExcel => new ExportToExcelCustomerCommand<ChiefControlModel, ChiefControlViewModel>(this);
 
-
-
-
-
-
-
+    }
+    static class StringExtensions
+    {
+        public static bool MyContains(this string a, string txt)
+        {
+            if (a != null && a.Contains(txt))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
