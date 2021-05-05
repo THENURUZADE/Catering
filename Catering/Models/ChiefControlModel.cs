@@ -1,9 +1,12 @@
 ﻿using Catering.Attributes;
+using Catering.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Catering.Models
 {
@@ -33,6 +36,33 @@ namespace Catering.Models
 
             return chief;
 
+        }
+
+        public bool IsValid()
+        {
+            if (!ErrorMetods.EmailValidationTest(Email))
+            {
+                return false;
+            }
+            else if (!ErrorMetods.PhoneValidationTest(Phone))
+            {
+                return false;
+            }
+            else if (Name.Length > 30)
+            {
+                ErrorMetods.InValidLength("Ad", 30);
+                return false;
+            }
+            else if (Email.Length > 30)
+            {
+                ErrorMetods.InValidLength("Email", 30);
+                return false;
+            }
+            else if (Note?.Length > 250)
+            {
+                ErrorMetods.InValidLength("Qeyd", 250);
+            }
+            return true;
         }
     }
 }
