@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Catering.Commands.ControlCommands.CustomerControlCommands
 {
-    public class ExportToExcelCustomerCommand<TModel,TviewModel> : BaseControlCommand<TviewModel> where TviewModel : BaseControlViewModel
+    public class ExportToExcelCustomerCommand<TModel,TviewModel> : BaseControlCommand<TviewModel> where TviewModel : BaseControlViewModel where TModel : BaseControlModel
     {
         public ExportToExcelCustomerCommand(TviewModel viewModel) : base(viewModel) { }
         public override void Execute(object parameter)
@@ -37,23 +37,31 @@ namespace Catering.Commands.ControlCommands.CustomerControlCommands
                 }
             }
 
-
-            var vmstringname = "ControlViewModel";
-            var Name = viewModel.GetType().ToString();
-            Name = Name.Remove(0,36);
-            Name = Name.Remove(Name.IndexOf(vmstringname), vmstringname.Length);
-            Name = Name + "s";
-            var props1 = viewModel.GetType().GetProperties();
             ObservableCollection<TModel> list = null;
-            foreach (var item in props1)
-            {
-                if (item.Name == Name)
-                {
-                    list = (ObservableCollection<TModel>)item.GetValue(viewModel);
-                    break;
-                }
-            }
-            
+
+
+            //var vmstringname = "ControlViewModel";
+            //var Name = viewModel.GetType().ToString();
+            //Name = Name.Remove(0, 36);
+            //Name = Name.Remove(Name.IndexOf(vmstringname), vmstringname.Length);
+            //Name = Name + "s";
+            //var props1 = viewModel.GetType().GetProperties();
+
+            //foreach (var item in props1)
+            //{
+            //    if (item.Name == Name)
+            //    {
+            //        var q = item.PropertyType;
+            //        list = (ObservableCollection<TModel>)item.GetValue(viewModel);
+            //        break;
+            //    }
+            //}
+
+
+            list = viewModel.GetType().GetProperties().FirstOrDefault(x => x.PropertyType == typeof(ObservableCollection<TModel>))
+                                                      .GetValue(viewModel) as ObservableCollection<TModel>;
+
+
             foreach (var item in list)
             {
                 List<object> propValues = new List<object>(); 
