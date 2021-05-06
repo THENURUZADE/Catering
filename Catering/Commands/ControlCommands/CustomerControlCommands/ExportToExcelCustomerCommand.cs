@@ -83,7 +83,8 @@ namespace Catering.Commands.ControlCommands.CustomerControlCommands
                 xlb.Worksheets.Add(exportTable, "Melumatlar");
                 xlb.Worksheet("Melumatlar").Rows().AdjustToContents();
                 xlb.Worksheet("Melumatlar").Columns().AdjustToContents();
-                xlb.SaveAs(saveFileDialog.FileName);
+                if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
+                    xlb.SaveAs(saveFileDialog.FileName);
 
                 
             }
