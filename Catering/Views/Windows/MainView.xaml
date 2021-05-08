@@ -37,7 +37,6 @@
                                 HorizontalAlignment="Left" Background="Transparent"
                                 BorderThickness="0" FontSize="16" FontWeight="SemiBold"-->
                 <Button Content="Sifarişlər" Style="{StaticResource ResourceKey=subButtons}"/>
-                <Button Content="Sifariş detalları" Style="{StaticResource ResourceKey=subButtons}"/>
                 <Button Content="Müştərilər" Style="{StaticResource ResourceKey=subButtons}"
                         Command="{Binding CustomerCommand}"/>
                 <Button Content="Yemək" Style="{StaticResource ResourceKey=subButtons}"/>
