@@ -18,11 +18,14 @@ namespace Catering.Commands.ControlCommands.CustomerControlCommands
 {
     public class ExportToExcelCustomerCommand<TModel,TviewModel> : BaseControlCommand<TviewModel> where TviewModel : BaseControlViewModel where TModel : BaseControlModel
     {
-        public ExportToExcelCustomerCommand(TviewModel viewModel) : base(viewModel) { }
+        ObservableCollection<TModel> list = null;
+        public ExportToExcelCustomerCommand(TviewModel viewModel,ObservableCollection<TModel> list) : base(viewModel) 
+        {
+            this.list = list;
+        }
         public override void Execute(object parameter)
         {
             DataTable exportTable = new DataTable();
-
             List<PropertyInfo> props = new List<PropertyInfo>();
             var properties = typeof(TModel).GetProperties();
             foreach (var item in properties)
@@ -37,7 +40,7 @@ namespace Catering.Commands.ControlCommands.CustomerControlCommands
                 }
             }
 
-            ObservableCollection<TModel> list = null;
+            
 
 
             //var vmstringname = "ControlViewModel";
@@ -58,8 +61,8 @@ namespace Catering.Commands.ControlCommands.CustomerControlCommands
             //}
 
 
-            list = viewModel.GetType().GetProperties().FirstOrDefault(x => x.PropertyType == typeof(ObservableCollection<TModel>))
-                                                      .GetValue(viewModel) as ObservableCollection<TModel>;
+            // list = viewModel.GetType().GetProperties().FirstOrDefault(x => x.PropertyType == typeof(ObservableCollection<TModel>))
+                                                      //.GetValue(viewModel) as ObservableCollection<TModel>;
 
 
             foreach (var item in list)
