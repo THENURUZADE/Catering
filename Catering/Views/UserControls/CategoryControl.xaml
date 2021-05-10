@@ -50,7 +50,7 @@
         <Grid Grid.Row="1" Grid.Column="0">
             <!--TODO: Form-->
         </Grid>
-        <ListView x:Name="ListView" Grid.Row="1" ItemsSource="{Binding Chiefs}" SelectedItem="{Binding SelectedModel}" Style="{StaticResource lstView}" >
+        <ListView x:Name="ListView" Grid.Row="1" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedModel}" Style="{StaticResource lstView}" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="No" Width="50" DisplayMemberBinding="{Binding No}"></GridViewColumn>

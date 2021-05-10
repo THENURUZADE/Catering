@@ -1,9 +1,13 @@
-﻿using Catering.ViewModel.ControlViewModel;
+﻿using Catering.Core.Domain.Entities;
+using Catering.Mappers;
+using Catering.Models;
+using Catering.ViewModel.ControlViewModel;
 using Catering.ViewModel.WindowViewModel;
 using Catering.Views.UserControls;
 using Catering.Views.Windows;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +28,16 @@ namespace Catering.Commands.MainViewCommands
             categoryControl.DataContext = categoryViewModel;
 
 
+            CategoryMapper mapper = new CategoryMapper();
+            List<CookCategory> categories = DB.CategoryRepository.Get();
+            List<CategoryControlModel> models = new List<CategoryControlModel>(categories.Count);
+            foreach(var category in categories)
+            {
+                models.Add(mapper.Map(category));
+            }
+
+            categoryViewModel.AllModels = models;
+            categoryViewModel.Categories = new ObservableCollection<CategoryControlModel>(models);
 
             var mainView = (MainView)viewModel.view;
             mainView.grdMain.Children.Clear();
