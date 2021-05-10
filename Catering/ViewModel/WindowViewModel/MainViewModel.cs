@@ -9,8 +9,10 @@ namespace Catering.ViewModel.WindowViewModel
         {
             ChiefCommand = new ChiefCommand(this);
             CustomerCommand = new CustomerCommand(this);
+            CategoryCommand = new CategoryCommand(this);
         }
         public ChiefCommand ChiefCommand { get; set; }
         public CustomerCommand CustomerCommand { get; set; }
+        public CategoryCommand CategoryCommand { get; set; }
     }
 }

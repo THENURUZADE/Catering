@@ -11,6 +11,7 @@ namespace Catering.Core.Domain.Abstracts
         IUserRepository UserRepository { get; }
         IChiefRepository ChiefRepository { get; }
         ICustomerRepository CustomerRepository { get; }
+        ICategoryRepository CategoryRepository { get; }
 
         bool CheckServer();
     }

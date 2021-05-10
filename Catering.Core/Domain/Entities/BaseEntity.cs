@@ -9,7 +9,7 @@ namespace Catering.Core.Domain.Entities
     public abstract class BaseEntity
     {
         public int Id { get; set; }
-        public DateTime LastModifiedDate { get; set; }
+        public DateTime LastModifiedDate { get; set; } = DateTime.Now;
         public User Creator { get; set; }
         public bool IsDeleted { get; set; }
     }

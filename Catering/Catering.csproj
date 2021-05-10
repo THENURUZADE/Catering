@@ -77,6 +77,9 @@
     </ApplicationDefinition>
     <Compile Include="Attributes\ExportAttribute.cs" />
     <Compile Include="Commands\ControlCommands\BaseControlCommand.cs" />
+    <Compile Include="Commands\ControlCommands\CategoryControlCommands\DeleteCategoryCommand.cs" />
+    <Compile Include="Commands\ControlCommands\CategoryControlCommands\RejectCategoryCommand.cs" />
+    <Compile Include="Commands\ControlCommands\CategoryControlCommands\SaveCategoryCommand.cs" />
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\SaveCommand.cs" />
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\DeleteCommand.cs" />
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\RejectCommand.cs" />
@@ -85,6 +88,7 @@
     <Compile Include="Commands\ControlCommands\CustomerControlCommands\SaveCustomerCommand.cs" />
     <Compile Include="Commands\ControlCommands\CustomerControlCommands\DeleteCustomerCommand.cs" />
     <Compile Include="Commands\ControlCommands\CustomerControlCommands\RejectCustomerCommand.cs" />
+    <Compile Include="Commands\MainViewCommands\CategoryCommand.cs" />
     <Compile Include="Commands\MainViewCommands\ChiefCommand.cs" />
     <Compile Include="Commands\MainViewCommands\CustomerCommand.cs" />
     <Compile Include="Enums\Situation.cs" />
@@ -92,13 +96,16 @@
     <Compile Include="Helpers\ErrorMetods.cs" />
     <Compile Include="Helpers\UIMessages.cs" />
     <Compile Include="Mappers\BaseMapper.cs" />
+    <Compile Include="Mappers\CategoryMapper.cs" />
     <Compile Include="Mappers\ChiefMapper.cs" />
     <Compile Include="Mappers\CustomerMapper.cs" />
     <Compile Include="Models\BaseControlModel.cs" />
+    <Compile Include="Models\CategoryControlModel.cs" />
     <Compile Include="Models\ChiefControlModel.cs" />
     <Compile Include="Models\CustomerControlModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ControlViewModel\BaseControlViewModel.cs" />
+    <Compile Include="ViewModel\ControlViewModel\CategoryControlViewModel.cs" />
     <Compile Include="ViewModel\ControlViewModel\ChiefControlViewModel.cs" />
     <Compile Include="ViewModel\ControlViewModel\CustomerControlViewModel.cs" />
     <Compile Include="ViewModel\WindowViewModel\BaseWindowViewModel.cs" />
@@ -114,6 +121,9 @@
     </Compile>
     <Compile Include="Views\Components\SureDialogBox.xaml.cs">
       <DependentUpon>SureDialogBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\CategoryControl.xaml.cs">
+      <DependentUpon>CategoryControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControls\CustomerControl.xaml.cs">
       <DependentUpon>CustomerControl.xaml</DependentUpon>
@@ -149,6 +159,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Components\SureDialogBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\CategoryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

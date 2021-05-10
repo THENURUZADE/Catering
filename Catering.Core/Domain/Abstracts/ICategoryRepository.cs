@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace Catering.Core.Domain.Abstracts
 {
-    public interface IChiefRepository
+    public interface ICategoryRepository
     {
-        List<Chief> Get();
-        int Add(Chief chief);
-        bool Update(Chief chief);
-        
+        List<CookCategory> Get();
+        int Add(CookCategory category);
+        bool Update(CookCategory category);
     }
 }

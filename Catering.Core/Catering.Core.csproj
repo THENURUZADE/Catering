@@ -42,11 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\SqlServer\BaseRepository.cs" />
+    <Compile Include="DataAccess\SqlServer\SqlCategoryRepository.cs" />
     <Compile Include="DataAccess\SqlServer\SqlChiefRepository.cs" />
     <Compile Include="DataAccess\SqlServer\SqlContext.cs" />
     <Compile Include="DataAccess\SqlServer\SqlCustomerRepository.cs" />
     <Compile Include="DataAccess\SqlServer\SqlUnitOfWork.cs" />
     <Compile Include="DataAccess\SqlServer\SqlUserRepository.cs" />
+    <Compile Include="Domain\Abstracts\ICategoryRepository.cs" />
     <Compile Include="Domain\Abstracts\IChiefRepository.cs" />
     <Compile Include="Domain\Abstracts\ICustomerRepository.cs" />
     <Compile Include="Domain\Abstracts\IUnitOfWork.cs" />

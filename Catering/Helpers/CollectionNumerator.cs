@@ -30,5 +30,10 @@ namespace Catering.Helpers
                 propertyInfo.SetValue(collection[i], i + 1);
             }
         }
+
+        internal static void Numerate(object allCategories, int ind)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
