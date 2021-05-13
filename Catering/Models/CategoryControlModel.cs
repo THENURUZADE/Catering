@@ -37,10 +37,15 @@ namespace Catering.Models
         {
             if (Name.Length > 30)
             {
-                ErrorMetods.InValidLength("Ad", 30);
+                ErrorMethods.InValidLength("Ad", 30);
                 return false;
             }
             return true;
+        }
+
+        public override string ToString()
+        {
+            return Name.ToString();
         }
     }
 }

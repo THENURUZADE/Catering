@@ -83,6 +83,10 @@
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\SaveCommand.cs" />
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\DeleteCommand.cs" />
     <Compile Include="Commands\ControlCommands\ChiefControlCommands\RejectCommand.cs" />
+    <Compile Include="Commands\ControlCommands\CookControlCommands\BaseCookCommand.cs" />
+    <Compile Include="Commands\ControlCommands\CookControlCommands\DeleteCookCommand.cs" />
+    <Compile Include="Commands\ControlCommands\CookControlCommands\RejectCookCommand.cs" />
+    <Compile Include="Commands\ControlCommands\CookControlCommands\SaveCookCommand.cs" />
     <Compile Include="Commands\ControlCommands\CustomerControlCommands\BaseCustomerCommand.cs" />
     <Compile Include="Commands\ControlCommands\CustomerControlCommands\ExportToExcelCustomerCommand.cs" />
     <Compile Include="Commands\ControlCommands\CustomerControlCommands\SaveCustomerCommand.cs" />
@@ -90,23 +94,27 @@
     <Compile Include="Commands\ControlCommands\CustomerControlCommands\RejectCustomerCommand.cs" />
     <Compile Include="Commands\MainViewCommands\CategoryCommand.cs" />
     <Compile Include="Commands\MainViewCommands\ChiefCommand.cs" />
+    <Compile Include="Commands\MainViewCommands\CookCommand.cs" />
     <Compile Include="Commands\MainViewCommands\CustomerCommand.cs" />
     <Compile Include="Enums\Situation.cs" />
     <Compile Include="Helpers\CollectionNumerator.cs" />
-    <Compile Include="Helpers\ErrorMetods.cs" />
+    <Compile Include="Helpers\ErrorMethods.cs" />
     <Compile Include="Helpers\UIMessages.cs" />
     <Compile Include="Mappers\BaseMapper.cs" />
     <Compile Include="Mappers\CategoryMapper.cs" />
     <Compile Include="Mappers\ChiefMapper.cs" />
+    <Compile Include="Mappers\CookMapper.cs" />
     <Compile Include="Mappers\CustomerMapper.cs" />
     <Compile Include="Models\BaseControlModel.cs" />
     <Compile Include="Models\CategoryControlModel.cs" />
     <Compile Include="Models\ChiefControlModel.cs" />
+    <Compile Include="Models\CookModel.cs" />
     <Compile Include="Models\CustomerControlModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ControlViewModel\BaseControlViewModel.cs" />
     <Compile Include="ViewModel\ControlViewModel\CategoryControlViewModel.cs" />
     <Compile Include="ViewModel\ControlViewModel\ChiefControlViewModel.cs" />
+    <Compile Include="ViewModel\ControlViewModel\CookViewModel.cs" />
     <Compile Include="ViewModel\ControlViewModel\CustomerControlViewModel.cs" />
     <Compile Include="ViewModel\WindowViewModel\BaseWindowViewModel.cs" />
     <Compile Include="ViewModel\WindowViewModel\ConfigurationViewModel.cs" />
@@ -124,6 +132,9 @@
     </Compile>
     <Compile Include="Views\UserControls\CategoryControl.xaml.cs">
       <DependentUpon>CategoryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\CooksControl.xaml.cs">
+      <DependentUpon>CooksControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControls\CustomerControl.xaml.cs">
       <DependentUpon>CustomerControl.xaml</DependentUpon>
@@ -163,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControls\CategoryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\CooksControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

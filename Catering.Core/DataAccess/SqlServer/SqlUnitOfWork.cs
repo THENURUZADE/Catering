@@ -19,6 +19,7 @@ namespace Catering.Core.DataAccess.SqlServer
         public IChiefRepository ChiefRepository => new SqlChiefRepository(context);
         public ICustomerRepository CustomerRepository => new SqlCustomerRepository(context);
         public ICategoryRepository CategoryRepository => new SqlCategoryRepository(context);
+        public ICookRepository CookRepository => new SqlCookRepository(context);
 
         public bool CheckServer()
         {

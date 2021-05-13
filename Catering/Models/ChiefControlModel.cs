@@ -40,27 +40,27 @@ namespace Catering.Models
 
         public bool IsValid()
         {
-            if (!ErrorMetods.EmailValidationTest(Email))
+            if (!ErrorMethods.EmailValidationTest(Email))
             {
                 return false;
             }
-            else if (!ErrorMetods.PhoneValidationTest(Phone))
+            else if (!ErrorMethods.PhoneValidationTest(Phone))
             {
                 return false;
             }
             else if (Name.Length > 30)
             {
-                ErrorMetods.InValidLength("Ad", 30);
+                ErrorMethods.InValidLength("Ad", 30);
                 return false;
             }
             else if (Email.Length > 30)
             {
-                ErrorMetods.InValidLength("Email", 30);
+                ErrorMethods.InValidLength("Email", 30);
                 return false;
             }
             else if (Note?.Length > 250)
             {
-                ErrorMetods.InValidLength("Qeyd", 250);
+                ErrorMethods.InValidLength("Qeyd", 250);
             }
             return true;
         }

@@ -1,4 +1,5 @@
 ﻿using Catering.Core.Domain.Entities;
+using Catering.Helpers;
 using Catering.Mappers;
 using Catering.Models;
 using Catering.ViewModel.ControlViewModel;
@@ -35,7 +36,7 @@ namespace Catering.Commands.MainViewCommands
             {
                 models.Add(mapper.Map(category));
             }
-
+            CollectionNumerator<CategoryControlModel>.Numerate(models);
             categoryViewModel.AllModels = models;
             categoryViewModel.Categories = new ObservableCollection<CategoryControlModel>(models);
 

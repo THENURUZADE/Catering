@@ -44,7 +44,7 @@ namespace Catering.Commands.ControlCommands.CategoryControlCommands
 
                 int ind = viewModel.Categories.IndexOf(viewModel.SelectedModel);
                 viewModel.AllModels.RemoveAt(ind);
-                CollectionNumerator<CategoryControlViewModel>.Numerate(viewModel.AllModels, ind);
+                CollectionNumerator<CategoryControlModel>.Numerate(viewModel.AllModels, ind);
                 viewModel.Categories = new System.Collections.ObjectModel.ObservableCollection<CategoryControlModel>(viewModel.AllModels);
                 viewModel.CurrentModel = null;
                 viewModel.CurrentSituation = (int)Enums.Situation.Normal;

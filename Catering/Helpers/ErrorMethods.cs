@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace Catering.Helpers
 {
-    public static class ErrorMetods
+    public static class ErrorMethods
     {
         public static void InValidSpace(string header)
         {

@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="Catering.Views.UserControls.CooksControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Catering.Views.UserControls" xmlns:components="clr-namespace:Catering.Views.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="LightGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <components:HeaderControl/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Style="{StaticResource grdForm}">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Ad:" Style="{StaticResource txbForm}"
+                           TextAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource txtForm}" 
+                         Text="{Binding CurrentModel.Name}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Porsiya kütləsi:" TextAlignment="Center"
+                           Style="{StaticResource txbForm}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding CurrentModel.PortionWeight}"
+                         Style="{StaticResource txtForm}"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Porsiya qiyməti:"  TextAlignment="Center"
+                           Style="{StaticResource txbForm}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CurrentModel.PortionPrice}"
+                         Style="{StaticResource txtForm}"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Kateqoriya:" TextAlignment="Center"
+                           Style="{StaticResource txbForm}"/>
+                <ComboBox Grid.Row="0" Grid.Column="3" Margin="5" ItemsSource="{Binding Categories}"
+                          SelectedItem="{Binding CurrentModel.Category}" FontSize="18"
+                          DisplayMemberPath="Name" SelectedValue="{Binding CurrentModel.Category.Id}"
+                          SelectedValuePath="Id"/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Text="Qeyd:" 
+                           Style="{StaticResource txbForm}" TextAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Style="{StaticResource txForm}"
+                         AcceptsReturn="True" TextWrapping="Wrap" Text="{Binding CurrentModel.Note}"/>
+            </Grid>
+            <components:ButtonsControl Grid.Column="1"/>
+        </Grid>
+        <ListView Grid.Row="2" Style="{StaticResource lstView}" ItemsSource="{Binding Cooks}"
+                  SelectedItem="{Binding SelectedModel}">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="No" Width="50" DisplayMemberBinding="{Binding No}"/>
+                        <GridViewColumn Header="Ad" Width="100" DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Kateqoriya" Width="120" DisplayMemberBinding="{Binding Category.Name}"/>
+                        <GridViewColumn Header="Porsiya kütləsi" Width="120" 
+                                        DisplayMemberBinding="{Binding PortionWeight}"/>
+                        <GridViewColumn Header="Porsiya qiyməti" Width="120" 
+                                        DisplayMemberBinding="{Binding PortionPrice}"/>
+                        <GridViewColumn Header="Qeyd" Width="250" DisplayMemberBinding="{Binding Note}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Row="3" Background="DarkBlue">
+            <WrapPanel HorizontalAlignment="Center">
+                <TextBlock Text="Axtarış" Foreground="White" FontSize="22" 
+                           VerticalAlignment="Center" FontWeight="Bold" Margin="2"/>
+                <TextBox Height="40" Foreground="Black" FontSize="20" Width="400" Margin="2"
+                         HorizontalAlignment="Center" FontWeight="Bold" BorderThickness="2"
+                         BorderBrush="DarkOrange" VerticalContentAlignment="Center"
+                         Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                <Border CornerRadius="10" Background="GreenYellow" Margin="10 2 2 2">
+                    <Button Content="Export" FontSize="20" BorderThickness="0"
+                        Background="Transparent" FontWeight="Bold" Command="{Binding ExportExcel}"/>
+                </Border>
+            </WrapPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>

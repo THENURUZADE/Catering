@@ -42,24 +42,24 @@ namespace Catering.Models
         {
             if(string.IsNullOrWhiteSpace(Name))
             {
-                ErrorMetods.InValidSpace("Müştəri adı");
+                ErrorMethods.InValidSpace("Müştəri adı");
                 return false;
             }
             else if (Name.Length > 15)
             {
-                ErrorMetods.InValidLength("Müştəri adı", 15);
+                ErrorMethods.InValidLength("Müştəri adı", 15);
                 return false;
             }
             if (string.IsNullOrWhiteSpace(Phone))
             {
-                ErrorMetods.InValidSpace("Telefon nömrəsi");
+                ErrorMethods.InValidSpace("Telefon nömrəsi");
                 return false;
             }
-            else if (!ErrorMetods.PhoneValidationTest(Phone.ToString()))
+            else if (!ErrorMethods.PhoneValidationTest(Phone.ToString()))
             {
                 return false;
             }
-            if (!string.IsNullOrWhiteSpace(Email) && !ErrorMetods.EmailValidationTest(Email.ToString()))
+            if (!string.IsNullOrWhiteSpace(Email) && !ErrorMethods.EmailValidationTest(Email.ToString()))
             {
                 return false;
             }

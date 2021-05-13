@@ -39,7 +39,8 @@
                 <Button Content="Sifarişlər" Style="{StaticResource ResourceKey=subButtons}"/>
                 <Button Content="Müştərilər" Style="{StaticResource ResourceKey=subButtons}"
                         Command="{Binding CustomerCommand}"/>
-                <Button Content="Yemək" Style="{StaticResource ResourceKey=subButtons}"/>
+                <Button Content="Yemək" Style="{StaticResource ResourceKey=subButtons}"
+                        Command="{Binding CookCommand}"/>
                 <Button Content="Kategoriyalar" Style="{StaticResource ResourceKey=subButtons}"
                         Command="{Binding CategoryCommand}"/>
                 <Button Content="Şeflər" Style="{StaticResource ResourceKey=subButtons}" 

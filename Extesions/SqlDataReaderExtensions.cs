@@ -29,5 +29,9 @@ namespace Extensions
         {
             return (DateTime)reader[columnname];
         }
+        public static decimal GetDecimal(this SqlDataReader reader, string columnName)
+        {
+            return (decimal)reader[columnName];
+        }
     }
 }
