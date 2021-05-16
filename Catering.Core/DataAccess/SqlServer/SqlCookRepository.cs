@@ -47,10 +47,7 @@ namespace Catering.Core.DataAccess.SqlServer
                     {
                         while (reader.Read())
                         {
-                            Cook cook = new Cook();
-                            cook.CookCategory = new CookCategory();
-                            cook.Creator = new User();
-
+                            Cook cook;
                             cook = GetFromReader(reader);
 
                             Cooks.Add(cook);
