@@ -35,7 +35,12 @@ namespace Catering.Commands.ControlCommands.CookControlCommands
                 cook.LastModifiedDate = DateTime.Now;
                 cook.IsDeleted = true;
 
-                DB.CookRepository.Update(cook);
+                bool res = DB.CookRepository.Update(cook);
+
+                if (!res)
+                {
+                    MessageBox.Show(UIMessages.ErrorMessage, "Xəta", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
                 CookModel model = viewModel.AllModels.FirstOrDefault(x => x.Id == viewModel.SelectedModel.Id);
                 int index = viewModel.AllModels.IndexOf(model);
                 viewModel.AllModels.Remove(model);

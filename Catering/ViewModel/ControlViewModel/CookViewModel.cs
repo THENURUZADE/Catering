@@ -73,7 +73,7 @@ namespace Catering.ViewModel.ControlViewModel
         public SaveCookCommand Save => new SaveCookCommand(this);
         public RejectCookCommand Reject => new RejectCookCommand(this);
         public DeleteCookCommand Delete => new DeleteCookCommand(this);
-        public ExportToExcelCustomerCommand<CookModel, CookViewModel> ExportExcel => new ExportToExcelCustomerCommand<CookModel, CookViewModel>(this, Cooks);
+        public ExportToExcelCustomerCommand<CookModel> ExportExcel => new ExportToExcelCustomerCommand<CookModel>( Cooks);
         #endregion
 
         #region Commands

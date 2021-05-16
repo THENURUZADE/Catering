@@ -79,12 +79,14 @@ namespace Catering.ViewModel.ControlViewModel
 
         private void Search(string value)
         {
-            throw new NotImplementedException();
+            var temp = AllModels.Where(x =>  x.Name.Contains(searchText) || x.Note.MyContains(searchText));
+            Categories = new ObservableCollection<CategoryControlModel>(temp.ToList());
         }
 
         public SaveCategoryCommand Save => new SaveCategoryCommand(this);
         public RejectCategoryCommand Reject => new RejectCategoryCommand(this);
         public DeleteCategoryCommand Delete => new DeleteCategoryCommand(this);
-        //public ExportToExcelCustomerCommand Export => new ExportToExcelCustomerCommand<CategoryControlModel,CategoryControlViewModel>(this);
+        public ExportToExcelCustomerCommand<CategoryControlModel> ExportExcel => new ExportToExcelCustomerCommand<CategoryControlModel>(Categories);
     }
+    
 }

@@ -13,17 +13,27 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Catering.Commands.ControlCommands.CustomerControlCommands
 {
-    public class ExportToExcelCustomerCommand<TModel,TviewModel> : BaseControlCommand<TviewModel> where TviewModel : BaseControlViewModel where TModel : BaseControlModel
+    public class ExportToExcelCustomerCommand<TModel> :ICommand /*BaseControlCommand<TviewModel> where TviewModel : BaseControlViewModel*/ where TModel : BaseControlModel
     {
         ObservableCollection<TModel> list = null;
-        public ExportToExcelCustomerCommand(TviewModel viewModel,ObservableCollection<TModel> list) : base(viewModel) 
+        public ExportToExcelCustomerCommand(ObservableCollection<TModel> list)
         {
             this.list = list;
+            
         }
-        public override void Execute(object parameter)
+
+        public event EventHandler CanExecuteChanged;
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public void Execute(object parameter)
         {
             DataTable exportTable = new DataTable();
             List<PropertyInfo> props = new List<PropertyInfo>();
