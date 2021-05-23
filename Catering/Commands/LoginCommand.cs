@@ -34,7 +34,7 @@ namespace Catering.Commands
                     view.DataContext = viewModel;
                     view.Show();
 
-            this.viewModel.View.Close();
+                    this.viewModel.View.Close();
                 }
                 else
                 {
