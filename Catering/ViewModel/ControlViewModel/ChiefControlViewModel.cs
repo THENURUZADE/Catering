@@ -108,7 +108,7 @@ namespace Catering.ViewModel.ControlViewModel
             Chiefs = new ObservableCollection<ChiefControlModel>(temp.ToList());
 
         }
-        public ExportToExcelCustomerCommand<ChiefControlModel, ChiefControlViewModel> ExportExcel => new ExportToExcelCustomerCommand<ChiefControlModel, ChiefControlViewModel>(this,Chiefs);
+        public ExportToExcelCustomerCommand<ChiefControlModel> ExportExcel => new ExportToExcelCustomerCommand<ChiefControlModel>(Chiefs);
 
     }
     static class StringExtensions
