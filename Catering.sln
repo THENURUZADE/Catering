@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catering.Core", "Catering.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions", "Extesions\Extensions.csproj", "{613D9AE3-DD7C-4818-93EE-117A27889577}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CateringWeb", "CateringWeb\CateringWeb.csproj", "{92DA7C66-23CE-4EEA-8C3C-EA78E4065FD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{613D9AE3-DD7C-4818-93EE-117A27889577}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{613D9AE3-DD7C-4818-93EE-117A27889577}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{613D9AE3-DD7C-4818-93EE-117A27889577}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92DA7C66-23CE-4EEA-8C3C-EA78E4065FD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92DA7C66-23CE-4EEA-8C3C-EA78E4065FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92DA7C66-23CE-4EEA-8C3C-EA78E4065FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92DA7C66-23CE-4EEA-8C3C-EA78E4065FD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
