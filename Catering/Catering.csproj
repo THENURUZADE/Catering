@@ -49,6 +49,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.2\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
       <Private>True</Private>
@@ -242,17 +245,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Catering.Core\Catering.Core.csproj">
-      <Project>{6ba3cf81-9a85-4759-97d2-3b1a7c4f6e22}</Project>
-      <Name>Catering.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\CancelImage.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\LogoCateringImage.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Catering.Core\Catering.Core.csproj">
+      <Project>{4fc7b353-70e1-46be-888c-76857602a7ff}</Project>
+      <Name>Catering.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\Extensions.csproj">
+      <Project>{6d82475e-c5e3-48ed-b6df-f649e637ad17}</Project>
+      <Name>Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
