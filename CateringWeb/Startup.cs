@@ -1,4 +1,7 @@
+using Catering.Core;
 using Catering.Core.Domain.Entities;
+using Catering.Core.Enums;
+using Catering.Core.Factories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -28,9 +31,17 @@ namespace CateringWeb
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            string connectionString = Configuration.GetConnectionString("DefaultConnection");
 
-            
+            Kernel.DB = DbFactory.Create(ServerType.SqlServer, connectionString);
+            Kernel.CurrentUser = Kernel.DB.UserRepository.Get("admin");
+
+            services.AddScoped(serviceProvider =>
+            {
+                return Kernel.DB;
+            });
+
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -71,6 +71,47 @@ namespace Catering.Core.DataAccess.SqlServer
             }
         }
 
+        public Chief Get(int id)
+        {
+            using (SqlConnection con = new SqlConnection(context.connectionString))
+            {
+                con.Open();
+                string command = "select * from Chiefs where id=@Id and isdeleted = 0";
+                using (SqlCommand com = new SqlCommand(command,con))
+                {
+                    com.Parameters.AddWithValue("@Id", id);
+
+                    Chief chief = null;
+
+                    using (var reader = com.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            var Creator = new User()
+                            {
+                                Id = reader.GetInt32("creatorid")
+                            };
+                            chief = new Chief()
+                            {
+                                Id = reader.GetInt32("id"),
+                                IsDeleted = false,
+                                LastModifiedDate = reader.GetDateTime("lastmodifieddate"),
+                                Name = reader.GetString("name"),
+                                Phone = reader.GetString("phone"),
+                                Email = reader.GetString("email"),
+                                Creator = Creator
+                            };
+                            if (!reader.IsDbNull("note"))
+                            {
+                                chief.Note = reader.GetString("note");
+                            }
+                        }
+                        return chief;
+                    }
+                }
+            }
+        }
+
         public bool Update(Chief chief)
         {
             using (SqlConnection con = new SqlConnection(context.connectionString))

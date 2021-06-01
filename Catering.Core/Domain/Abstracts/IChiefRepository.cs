@@ -12,6 +12,6 @@ namespace Catering.Core.Domain.Abstracts
         List<Chief> Get();
         int Add(Chief chief);
         bool Update(Chief chief);
-        
+        Chief Get(int id);
     }
 }
