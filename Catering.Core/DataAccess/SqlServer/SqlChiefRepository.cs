@@ -57,9 +57,12 @@ namespace Catering.Core.DataAccess.SqlServer
                             LastModifiedDate = reader.GetDateTime("lastmodifieddate"),
                             Name = reader.GetString("name"),
                             Phone = reader.GetString("phone"),
-                            Email = reader.GetString("email"),
                             Creator = Creator
                         };
+                        if (!reader.IsDbNull("email"))
+                        {
+                            chief.Email = reader.GetString("email");
+                        }
                         if (!reader.IsDbNull("note"))
                         {
                             chief.Note = reader.GetString("note");
@@ -98,9 +101,12 @@ namespace Catering.Core.DataAccess.SqlServer
                                 LastModifiedDate = reader.GetDateTime("lastmodifieddate"),
                                 Name = reader.GetString("name"),
                                 Phone = reader.GetString("phone"),
-                                Email = reader.GetString("email"),
                                 Creator = Creator
                             };
+                            if (!reader.IsDbNull("email"))
+                            {
+                                chief.Email = reader.GetString("email");
+                            }
                             if (!reader.IsDbNull("note"))
                             {
                                 chief.Note = reader.GetString("note");
@@ -133,7 +139,7 @@ namespace Catering.Core.DataAccess.SqlServer
         {
             com.Parameters.AddWithValue("@name", chief.Name);
             com.Parameters.AddWithValue("@phone", chief.Phone);
-            com.Parameters.AddWithValue("@email", chief.Email);
+            com.Parameters.AddWithValue("@email", chief.Email ?? (object)DBNull.Value);
             com.Parameters.AddWithValue("@note", chief.Note ?? (object)DBNull.Value);
             com.Parameters.AddWithValue("@creatorid", chief.Creator.Id);
             com.Parameters.AddWithValue("@isdeleted", chief.IsDeleted);

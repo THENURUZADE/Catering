@@ -10,5 +10,6 @@ namespace Catering.Core.Domain.Abstracts
     public interface IUserRepository
     {
         User Get(string username);
+        User Get(int Id);
     }
 }

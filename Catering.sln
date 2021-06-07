@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NecessaryItems", "NecessaryItems", "{3FF589A5-AEC9-4F93-A9D1-10702AAD3727}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\..\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Backup\Catering.bak = ..\..\..\..\..\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Backup\Catering.bak
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catering", "Catering\Catering.csproj", "{CF0617B3-B669-44BC-8C92-49C7BDCAE7A7}"
 EndProject
@@ -14,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catering.Web", "CateringWeb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions", "Extensions\Extensions.csproj", "{6D82475E-C5E3-48ED-B6DF-F649E637AD17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catering.Core", "Catering.Core\Catering.Core.csproj", "{4FC7B353-70E1-46BE-888C-76857602A7FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catering.Core", "Catering.Core\Catering.Core.csproj", "{4FC7B353-70E1-46BE-888C-76857602A7FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

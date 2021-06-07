@@ -2,9 +2,11 @@ using Catering.Core;
 using Catering.Core.Domain.Entities;
 using Catering.Core.Enums;
 using Catering.Core.Factories;
+using Catering.Web.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -31,6 +33,8 @@ namespace CateringWeb
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IPasswordHasher<User>, CustomPasswordHasher>();
+
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
 
             Kernel.DB = DbFactory.Create(ServerType.SqlServer, connectionString);
@@ -40,6 +44,18 @@ namespace CateringWeb
             {
                 return Kernel.DB;
             });
+
+            services.AddTransient<IUserStore<User>, UserStore>();
+            services.AddTransient<IRoleStore<Role>, RoleStore>();
+
+            services.AddIdentity<User, Role>();
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = "/Account/AccessDenied";
+                options.LoginPath = "/Account/Index";
+            }
+            );
 
             services.AddControllersWithViews();
         }
@@ -53,7 +69,10 @@ namespace CateringWeb
             }
 
             app.UseRouting();
-            
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

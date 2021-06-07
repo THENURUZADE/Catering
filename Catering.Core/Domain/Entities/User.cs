@@ -9,11 +9,11 @@ namespace Catering.Core.Domain.Entities
 {
     public class User : BaseEntityWithNote
     {
-        public string Username { get; set; }
+        public string Name { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public UserRole Role { get; set; }
         public decimal Salary { get; set; }
+        public List<Role> UserRoles { get; set; } = new List<Role>();
     }
 }

@@ -10,10 +10,11 @@ using Catering.Core.Domain.Abstracts;
 using Catering.Core.Domain.Entities;
 using Catering.Web.Mappers;
 using Catering.Core;
+using Catering.Web.Controllers;
 
 namespace CateringWeb.Controllers
 {
-    public class ChiefController : Controller
+    public class ChiefController : BaseController
     {
         private readonly IUnitOfWork DB;
         public ChiefController(IUnitOfWork db)
