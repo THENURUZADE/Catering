@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NecessaryItems", "NecessaryItems", "{3FF589A5-AEC9-4F93-A9D1-10702AAD3727}"
+	ProjectSection(SolutionItems) = preProject
+		E:\Download\Catering.bakt = E:\Download\Catering.bakt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catering", "Catering\Catering.csproj", "{CF0617B3-B669-44BC-8C92-49C7BDCAE7A7}"
 EndProject
