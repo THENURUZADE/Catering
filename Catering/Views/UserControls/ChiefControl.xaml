@@ -51,9 +51,7 @@
                              Style="{StaticResource txForm}"/>
             </Grid>
         </Grid>
-        <Grid Grid.Row="1" Grid.Column="0">
-            <!--TODO: Form-->
-        </Grid>
+        
         <ListView x:Name="ListView" Grid.Row="1" ItemsSource="{Binding Chiefs}" SelectedItem="{Binding SelectedModel}" Style="{StaticResource lstView}" >
             <ListView.View>
                 <GridView>
@@ -62,7 +60,6 @@
                     <GridViewColumn Header="Telefon" Width="150" DisplayMemberBinding="{Binding Phone}"></GridViewColumn>
                     <GridViewColumn Header="Email" Width="150" DisplayMemberBinding="{Binding Email}"></GridViewColumn>
                     <GridViewColumn Header="Qeyd" Width="350" DisplayMemberBinding="{Binding Note}"></GridViewColumn>
-                    
                     
                 </GridView>
             </ListView.View>

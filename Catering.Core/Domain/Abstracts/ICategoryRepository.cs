@@ -12,5 +12,6 @@ namespace Catering.Core.Domain.Abstracts
         List<CookCategory> Get();
         int Add(CookCategory category);
         bool Update(CookCategory category);
+        CookCategory Get(int id);
     }
 }

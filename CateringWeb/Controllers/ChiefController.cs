@@ -16,10 +16,9 @@ namespace CateringWeb.Controllers
 {
     public class ChiefController : BaseController
     {
-        private readonly IUnitOfWork DB;
-        public ChiefController(IUnitOfWork db)
+        public ChiefController(IUnitOfWork db) : base(db)
         {
-            DB = db;
+            
         }
         public IActionResult Index()
         {

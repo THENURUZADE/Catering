@@ -73,11 +73,8 @@
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
-
-
-
-
-
+           
+            
             <Style TargetType="Button" x:Key="btnDelete" BasedOn="{StaticResource btnBase}">
                 <Setter Property="Command" Value="{Binding Delete}"/>
                 <Setter Property="Content" Value="Sil"/>
@@ -137,6 +134,7 @@
                 <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Visible" ></Setter>
                 <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible" ></Setter>
             </Style>
+            
             <Style TargetType="Grid" x:Key="grdForm">
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
@@ -150,10 +148,9 @@
                         </DataTrigger.Setters>
                     </DataTrigger>
                 </Style.Triggers>
-                
             </Style>
            
-            <Style TargetType="Grid" x:Key="grdForm1">
+            <!--<Style TargetType="Grid" x:Key="grdForm1">
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
                         <DataTrigger.Setters>
@@ -166,8 +163,7 @@
                         </DataTrigger.Setters>
                     </DataTrigger>
                 </Style.Triggers>
-
-            </Style>
+            </Style>-->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

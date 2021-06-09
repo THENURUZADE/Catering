@@ -31,7 +31,6 @@ namespace Catering.Views.Windows
 
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
-
             //TODO
             //ADD crypt and decrypt algorithms to SecurityHelper
 

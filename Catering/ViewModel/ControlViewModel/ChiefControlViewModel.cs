@@ -22,7 +22,7 @@ namespace Catering.ViewModel.ControlViewModel
         }
         public override string Header => "Şeflər";
 
-        private ChiefControlModel model = new ChiefControlModel();
+        private ChiefControlModel model = new ChiefControlModel();  
         public ChiefControlModel Model
         {
             get 

@@ -23,14 +23,14 @@
             </Style>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
+    <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" Background="Aquamarine" Name="stpMenu" Width="0" HorizontalAlignment="Left">
+        <StackPanel Grid.Column="0" Background="DarkBlue" Name="stpMenu" Width="0" HorizontalAlignment="Left">
             <Button Content="Məlumatlar" Margin="2" Height="50" Name="btnInfo" BorderThickness="0" 
-                        Click="btnClick" Background="Transparent" FontSize="18" Foreground="DarkSlateBlue"
+                        Click="btnClick" Background="Transparent" FontSize="18" Foreground="White"
                         FontWeight="Bold"></Button>
             <StackPanel Name="stpInfo" Height="0">
                 <!--Height="30" Margin="3 0 0 0" Content="Sifarişlər"
@@ -47,14 +47,14 @@
                         Command="{Binding ChiefCommand}"/>
             </StackPanel>
             <Button Content="Hesabatlar" Margin="2" Height="50" Name="btnReport" BorderThickness="0"
-                        Click="btnClick" Background="Transparent" FontSize="18" Foreground="DarkSlateBlue"
+                        Click="btnClick" Background="Transparent" FontSize="18" Foreground="White"
                         FontWeight="Bold"></Button>
             <StackPanel x:Name="stpReport" Height="0">
                 <Button Content="Sifarişlər" Style="{StaticResource ResourceKey=subButtons}"/>
                 <Button Content="Müştərilər" Style="{StaticResource ResourceKey=subButtons}"/>
             </StackPanel>
             <Button Content="Əməliyyatlar" Margin="2" Height="50" Name="btnOperation" BorderThickness="0"
-                        Click="btnClick" Background="Transparent" FontSize="18" Foreground="DarkSlateBlue"
+                        Click="btnClick" Background="Transparent" FontSize="18" Foreground="White"
                         FontWeight="Bold"></Button>
             <StackPanel Name="stpOperation" Height="0">
                 <Button Content="Sifarişlər" Style="{StaticResource ResourceKey=subButtons}"/>

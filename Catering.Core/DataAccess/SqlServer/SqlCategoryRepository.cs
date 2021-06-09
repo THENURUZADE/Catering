@@ -107,6 +107,27 @@ namespace Catering.Core.DataAccess.SqlServer
             return category;
         }
 
+        public CookCategory Get(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(context.connectionString))
+            {
+                connection.Open();
+                string cmdText = @"select * from CookCategories where IsDeleted = 0 and Id = @Id";
+                using (SqlCommand cmd = new SqlCommand(cmdText, connection))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        CookCategory category = new CookCategory();
+                        if (reader.Read())
+                        {
+                            category = GetFromReader(reader);
+                        }
 
+                        return category;
+                    }
+                }
+            }
+        }
     }
 }

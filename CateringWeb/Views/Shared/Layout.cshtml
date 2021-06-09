@@ -47,8 +47,8 @@
                     <div class="list-group list-group-flush">
 
                         @*asp-action="Services" asp-controller="Service"*@
-                        <a asp-controller="Chiefs" asp-action="Index" class="sequence list-group-item list-group-item-action">Chiefs</a>
-                        <a asp-controller="CookCategory" asp-action="Index" class="sequence list-group-item list-group-item-action">Cook Categories</a>
+                        <a asp-controller="Chief" asp-action="Index" class="sequence list-group-item list-group-item-action">Chiefs</a>
+                        <a asp-controller="Category" asp-action="Index" class="sequence list-group-item list-group-item-action">Cook Categories</a>
                         <a asp-controller="Cooks" asp-action="Index" class="sequence list-group-item list-group-item-action">Cooks</a>
                     </div>
                 </div>
@@ -75,24 +75,26 @@
 
     <script>
         $(document).ready(function () {
-            var urlEnd = window.location.pathname.split('/')[3];
-            switch (window.location.pathname.split('/')[3]) {
-                case 'Chiefs':
+            var urlEnd = window.location.pathname.split('/')[1];
+            switch (window.location.pathname.split('/')[1]) {
+
+                case 'Chief':
                     {
+                        
                         $('.sequence').eq(0).addClass('active text-white');
-                        $('#content-header').text('Chiefs');
+                        $('#content-header').text('Chief');
                         break;
                     }
-                case 'CookCategories':
+                case 'Category':
                     {
                         $('.sequence').eq(1).addClass('active text-white');
-                        $('#content-header').text('Categories');
+                        $('#content-header').text('Category');
                         break;
                     }
                 case 'Cooks':
                     {
                         $('.sequence').eq(2).addClass('active text-white');
-                        $('#content-header').text('Authors');
+                        $('#content-header').text('Cooks');
                         break;
                     }
                 default:
