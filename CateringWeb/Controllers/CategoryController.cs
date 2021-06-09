@@ -5,6 +5,7 @@ using Catering.Web.Helpers;
 using Catering.Web.Mappers;
 using Catering.Web.Models;
 using Catering.Web.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Catering.Web.Controllers
 {
     public class CategoryController : BaseController
     {
-        public CategoryController(IUnitOfWork db):base(db)
+        public CategoryController(IUnitOfWork db, UserManager<User> userManager):base(db, userManager)
         {
 
         }
@@ -46,7 +47,7 @@ namespace Catering.Web.Controllers
             CookCategory category = DB.CategoryRepository.Get(cookCategoryViewModel.DeletedId);
             category.IsDeleted = true;
             DB.CategoryRepository.Update(category);
-            category.Creator = Kernel.CurrentUser;
+            category.Creator = CurrentUser;
             return RedirectToAction("Index");
         }
         
@@ -77,7 +78,7 @@ namespace Catering.Web.Controllers
             {
                 CookCategoryMapper mapper = new CookCategoryMapper();
                 CookCategory cookCategory = mapper.Map(model);
-                cookCategory.Creator = Kernel.CurrentUser;
+                cookCategory.Creator = CurrentUser;
                 if (model.Id==0)
                 {
                     DB.CategoryRepository.Add(cookCategory);

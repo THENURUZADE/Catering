@@ -1,5 +1,7 @@
 ﻿using Catering.Core.Domain.Abstracts;
+using Catering.Core.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,9 +14,14 @@ namespace Catering.Web.Controllers
     public abstract class BaseController : Controller
     {
         protected readonly IUnitOfWork DB;
-        public BaseController(IUnitOfWork db)
+        protected readonly UserManager<User> UserManager;
+
+        public BaseController(IUnitOfWork db, UserManager<User> userManager)
         {
             DB = db;
+            UserManager = userManager;
         }
+
+        public User CurrentUser => UserManager.GetUserAsync(User).Result;
     }
 }
