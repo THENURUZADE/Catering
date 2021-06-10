@@ -11,12 +11,13 @@ using Catering.Core.Domain.Entities;
 using Catering.Web.Mappers;
 using Catering.Core;
 using Catering.Web.Controllers;
+using Microsoft.AspNetCore.Identity;
 
 namespace CateringWeb.Controllers
 {
     public class ChiefController : BaseController
     {
-        public ChiefController(IUnitOfWork db) : base(db)
+        public ChiefController(IUnitOfWork db, UserManager<User> userManager) : base(db, userManager)
         {
             
         }
@@ -57,9 +58,11 @@ namespace CateringWeb.Controllers
         [HttpPost]
         public IActionResult SaveChief(ChiefModel chiefModel)
         {
+            chiefModel.Phone = "+994" + chiefModel.Phone;
+
             ChiefMapper mapper = new ChiefMapper();
             Chief chief = mapper.Map(chiefModel);
-            chief.Creator = Kernel.CurrentUser;
+            chief.Creator = CurrentUser;
 
             if (chief.Id == 0)
                 DB.ChiefRepository.Add(chief);
@@ -77,7 +80,7 @@ namespace CateringWeb.Controllers
             if (chief == null)
                 return Content("Chief not found");
 
-            chief.Creator = Kernel.CurrentUser;
+            chief.Creator = CurrentUser;
             chief.LastModifiedDate = DateTime.Now;
             chief.IsDeleted = true;
 
