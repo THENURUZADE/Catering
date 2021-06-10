@@ -2,6 +2,7 @@
 using Catering.Core.Domain.Entities;
 using Catering.Web.Models;
 using Catering.Web.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace Catering.Web.Controllers
 {
     public class CookController : BaseController
     {
-        public CookController(IUnitOfWork Db) : base(Db)
+        public CookController(IUnitOfWork Db,UserManager<User> userManager) : base(Db,userManager)
         {
         }
         
