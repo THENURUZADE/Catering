@@ -58,6 +58,8 @@ namespace CateringWeb.Controllers
         [HttpPost]
         public IActionResult SaveChief(ChiefModel chiefModel)
         {
+            chiefModel.Phone = "+994" + chiefModel.Phone;
+
             ChiefMapper mapper = new ChiefMapper();
             Chief chief = mapper.Map(chiefModel);
             chief.Creator = CurrentUser;
