@@ -18,7 +18,13 @@ namespace Catering.Web.Mappers
             model.Note = entity.Note;
             model.PortionPrice = entity.PortionPrice;
             model.PortionWeight = entity.PortionWeight;
-            model.CookCategory = entity.CookCategory;
+
+            if(entity.CookCategory != null)
+            {
+                CookCategoryMapper mapper = new CookCategoryMapper();
+                CookCategoryModel categoryModel = mapper.Map(entity.CookCategory);
+                model.CookCategory = categoryModel;
+            }
           
             return model;
         }
@@ -31,7 +37,12 @@ namespace Catering.Web.Mappers
             cook.Note = model.Note;
             cook.PortionPrice = model.PortionPrice;
             cook.PortionWeight = model.PortionWeight;
-            cook.CookCategory = model.CookCategory;
+            if (model.CookCategory != null)
+            {
+                CookCategoryMapper mapper = new CookCategoryMapper();
+                CookCategory category = mapper.Map(model.CookCategory);
+                cook.CookCategory = category;
+            }
 
             return cook;
 

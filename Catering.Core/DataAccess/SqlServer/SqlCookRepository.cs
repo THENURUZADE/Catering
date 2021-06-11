@@ -59,6 +59,31 @@ namespace Catering.Core.DataAccess.SqlServer
             }
         }
 
+        public Cook Get(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(context.connectionString))
+            {
+                connection.Open();
+                string cmdText = @"select c.*, cg.Name as CategoryName from cooks as c 
+                                   join CookCategories as cg On cg.id = c.CookCategoryId where c.IsDeleted = 0 and id = @Id";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, connection))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        Cook cook = null;
+                        if (reader.Read())
+                        {
+                            cook = GetFromReader(reader);
+                        }
+
+                        return cook;
+                    }
+                }
+            }
+        }
+
         public bool Update(Cook cook)
         {
             using(SqlConnection connection = new SqlConnection(context.connectionString))
