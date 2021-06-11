@@ -50,12 +50,20 @@
             <span class="text-danger" asp-validation-for="Email"></span>
         </div>
         <div class="form-group">
-            <label asp-for="Phone" for="phone" class="mr-sm-2">Phone:</label>
+            <label asp-for="NumberMain" for="phone" class="mr-sm-2">Phone:</label>
             <div style="display:flex; ">
                 <p class="form-control mb-2 mr-sm-2" style="width:auto;">+994</p>
-                <input asp-for="Phone" class="form-control mb-2 mr-sm-2"/>
+                <select asp-for="NumberPrefix" class="form-control mb-2 mr-sm-2" style="width:auto;">
+                    <option>050</option>
+                    <option>051</option>
+                    <option>055</option>
+                    <option>070</option>
+                    <option>077</option>
+                    <option>099</option>
+                </select>
+                <input asp-for="NumberMain" class="form-control mb-2 mr-sm-2"/>
             </div>
-            <span class="text-danger" asp-validation-for="Phone"></span>
+            <span class="text-danger" asp-validation-for="NumberMain"></span>
         </div>
         <div class="form-group">
             <label asp-for="Note" for="discount" class="mr-sm-2">Note:</label>
