@@ -11,6 +11,9 @@ namespace Catering.Web.Mappers
     {
         public override CookModel Map(Cook entity)
         {
+            if (entity == null)
+                return null;
+
             CookModel model = new CookModel();
            
             model.Id = entity.Id;
@@ -31,6 +34,9 @@ namespace Catering.Web.Mappers
 
         public override Cook Map(CookModel model)
         {
+            if (model == null)
+                return null;
+
             Cook cook = new Cook();
             cook.Id = model.Id;
             cook.Name = model.Name;

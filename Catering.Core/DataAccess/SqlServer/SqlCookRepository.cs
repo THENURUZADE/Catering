@@ -65,7 +65,7 @@ namespace Catering.Core.DataAccess.SqlServer
             {
                 connection.Open();
                 string cmdText = @"select c.*, cg.Name as CategoryName from cooks as c 
-                                   join CookCategories as cg On cg.id = c.CookCategoryId where c.IsDeleted = 0 and id = @Id";
+                                   join CookCategories as cg On cg.id = c.CookCategoryId where c.IsDeleted = 0 and c.id = @Id";
 
                 using (SqlCommand cmd = new SqlCommand(cmdText, connection))
                 {
@@ -130,7 +130,7 @@ namespace Catering.Core.DataAccess.SqlServer
             if (!reader.IsDbNull("Note"))
                 cook.Note = reader.GetString("Note");
             cook.PortionPrice = reader.GetDecimal("PortionPrice");
-            cook.PortionWeight = reader.GetDecimal("PortionPrice");
+            cook.PortionWeight = reader.GetDecimal("PortionWeight");
             cook.CookCategory.Id = reader.GetInt32("CookCategoryId");
             cook.CookCategory.Name = reader.GetString("CategoryName");
 

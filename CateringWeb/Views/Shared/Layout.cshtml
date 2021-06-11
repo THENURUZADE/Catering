@@ -49,7 +49,7 @@
                         @*asp-action="Services" asp-controller="Service"*@
                         <a asp-controller="Chief" asp-action="Index" class="sequence list-group-item list-group-item-action">Chiefs</a>
                         <a asp-controller="Category" asp-action="Index" class="sequence list-group-item list-group-item-action">Cook Categories</a>
-                        <a asp-controller="Cooks" asp-action="Index" class="sequence list-group-item list-group-item-action">Cooks</a>
+                        <a asp-controller="Cook" asp-action="Index" class="sequence list-group-item list-group-item-action">Cooks</a>
                     </div>
                 </div>
                 <div id="content" class="col-sm-12 col-md-9 col-lg-10 col-xl-10 p-0">
@@ -91,16 +91,16 @@
                         $('#content-header').text('Category');
                         break;
                     }
-                case 'Cooks':
+                case 'Cook':
                     {
                         $('.sequence').eq(2).addClass('active text-white');
-                        $('#content-header').text('Cooks');
+                        $('#content-header').text('Cook');
                         break;
                     }
                 default:
                     {
                         $('.sequence').eq(0).addClass('active text-white');
-                        $('#content-header').text('Chiefs');
+                        $('#content-header').text('Chief');
                         break;
                     }
             }
