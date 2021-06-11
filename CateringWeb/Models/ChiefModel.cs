@@ -33,8 +33,6 @@ namespace Catering.Web.Models
         public string NumberPrefix { get; set; }
 
         [Required]
-        //[StringLength(13)]
-        //[MinLength(13, ErrorMessage ="Telefon nomresi '+994551234567' seklinde olmalidir")]
         [RegularExpression(@"[0-9]{7}", ErrorMessage = "Example pattern of phone: 1234567")]
         public string NumberMain { get; set; }
     }
