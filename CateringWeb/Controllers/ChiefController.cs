@@ -30,6 +30,8 @@ namespace CateringWeb.Controllers
             foreach (var item in chiefs)
             {
                 chiefViewModel.Chiefs.Add(mapper.Map(item));
+                chiefViewModel.Chiefs[chiefViewModel.Chiefs.Count - 1].NumberPrefix = "0" + item.Phone.Substring(4, 2);
+                chiefViewModel.Chiefs[chiefViewModel.Chiefs.Count - 1].NumberMain = item.Phone.Substring(6);
             }
 
             EnumarationHelper<ChiefModel>.Numerate(chiefViewModel.Chiefs);
@@ -51,6 +53,8 @@ namespace CateringWeb.Controllers
 
                 ChiefMapper mapper = new ChiefMapper();
                 model = mapper.Map(chief);
+                model.NumberPrefix = "0" + chief.Phone.Substring(4, 2);
+                model.NumberMain = chief.Phone.Substring(6);
             }
             return View(model);
         }

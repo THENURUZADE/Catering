@@ -12,16 +12,30 @@ namespace Catering.Web.Models
         [StringLength(30)]
         public string Name { get; set; }
 
-        [Required]
-        //[StringLength(13)]
-        //[MinLength(13, ErrorMessage ="Telefon nomresi '+994551234567' seklinde olmalidir")]
-        [RegularExpression(@"[50?55?51?99?70?77]{2}[0-9]{7}", ErrorMessage ="Example pattern of phone: 551234567")]
-        public string Phone { get; set; }
+        private string phone;
+
+        public string Phone
+        {
+            get => RegionPrefix + NumberPrefix.Remove(0, 1) + NumberMain;
+            set
+            {
+                phone = value;
+            }
+        }
 
         [EmailAddress]
         public string Email { get; set; }
 
         [StringLength(250)]
         public string Note { get; set; }
+
+        public string RegionPrefix => "+994";
+        public string NumberPrefix { get; set; }
+
+        [Required]
+        //[StringLength(13)]
+        //[MinLength(13, ErrorMessage ="Telefon nomresi '+994551234567' seklinde olmalidir")]
+        [RegularExpression(@"[0-9]{7}", ErrorMessage = "Example pattern of phone: 1234567")]
+        public string NumberMain { get; set; }
     }
 }
